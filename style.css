@@ -1,102 +1,89 @@
-/*HEAD*/
-    /*Permet dégrader head*/
-        .top {
-        background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
-        padding-bottom: 50px;/*Saut de ligne (espacement)*/
-    }
-
-    /*Texte*/
-        /*Mise en forme titre*/
-            h1 {
-                font-family: "Changa One"; /*Police d'écriture*/
-                font-size: 90px; 
-                font-weight: 300; /*Taille des traits de la lettre*/
-                display: block;
-                margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-                width: 80%; /*Largeur max que prend l'affichage de l'écrant (responsive)*/
-                text-align: center;
-                color: #FFFFFF;
-        }
-
-        /*Mise en forme sous-titre*/
-            h2 {
-                font-family: "Quicksand"; /*Police d'écriture*/
-                font-size: 25px;
-                font-weight: Regular; /*Taille des traits de la lettre*/
-                display: block;
-                margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-                width: 80%; /*Largeur max que prend l'affichage de l'écrant (responsive)*/
-                text-align: center;
-                color: #D1FAE5;
-        }
-
-        /*Mise en forme description*/
-            h3 {
-                font-family: "Exo 2"; /*Police d'écriture*/
-                font-size: 15px;
-                font-weight: Regular; /*Taille des traits de la lettre*/
-                display: block;
-                margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-                width: 80%; /*Largeur max que prend l'affichage de l'écrant (responsive)*/
-                text-align: center;
-                color: #D1FAE5;
-    }
-
-    /*Barre de recherche*/
-        /*Paramétrage division barre de recherche*/
-            .search-box {
-            position: relative; /*Permet superposition (Affecte pas autre élèment)*/
-            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-            width: 50%; 
-        }
-
-        /*Initiation texte saisie*/
-            .game-search-bar {
-            font-family: "Exo 2";
-            font-size: 18px;
-            font-weight: Regular;
-            display: block;
-            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-            width: 100%;
-            text-align: center;
-            color: #D1FAE5;
-    
-            background-color: #065F46;
-            border-radius: 99999px;
-            border-color:#D1FAE5;
-            border-style:solid;
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-
-        /*Initiation texte dépard*/
-            .game-search-bar::placeholder { 
-            font-family: "Exo 2";
-            font-size: 18px;
-            font-weight: Regular;
-            color: #D1FAE5;
-        }
-
-        /*Parametrage icon loupe*/
-        .search-icon {
-            position: absolute; /*Permet superposition (Affecte les autre élèment)*/
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
-            pointer-events: none;
-        }
-
-        /*Retrait croix (clear recherche)*/
-            /* Chrome, Edge, Safari */
-                input[type="search"]::-webkit-search-cancel-button {
-                -webkit-appearance: none;
-                appearance: none;
-            }
-
-            /* Firefox */
-                input[type="search"]::-moz-search-clear {
-                display: none;
+body {
+  background-color: #0B2418;
+  text-align: center;
 }
-
+.titre h1 {
+  font-family: Changa One;
+  font-size: 36px;
+  font-weight: Regular;
+  display: flex;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 12px;
+  margin-top: 20px;
+  color: hsl(142, 17%, 91%);
+  text-align: start;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.titre img {
+  display: inline-flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 12px;
+  width: 950px;
+  height: auto;
+}
+.description h2 {
+  font-family: Quicksand;
+  font-size: 36px;
+  font-weight: Semibold;
+  display: block;
+  margin: auto;
+  width: 50%;
+  color: #86EFAC;
+  text-align: left;
+  cursor: pointer;
+}
+.description p {
+  font-family: Quicksand;
+  font-size: 20px;
+  font-weight: Semibold;
+  text-align: justify;
+  display: block;
+  margin: auto;
+  width: 50%;
+  color: #86EFAC;
+}
+.voter button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  background-color: #065F46;
+  border: 2px solid #FFFFFF;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 50px;
+  justify-content: center;
+}
+.voter img {
+  width: 28px; 
+  height: auto;
+  filter: brightness(0) invert(1);
+  justify-content: right;
+}
+.voter p {
+  font-family: Quicksand;
+  font-size: 20px;
+  font-weight: Semibold;
+  display: block;
+  margin: auto;
+  width: 50%;
+  color: #86EFAC;
+}
