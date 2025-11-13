@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+}
+.top {
+        background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
+        padding-bottom: 50px;/*Saut de ligne (espacement)*/
+        height: 100%;
+}
+.top h1 {
+  font-family: Changa One; /* police */
+  font-style: regular; /* style de police */
+  font-size: 64px; /* taille de police */
+  text-align: center;
+  color: white; /* la coleur */
+}
+/*Barre de recherche*/
+        /*Paramétrage division barre de recherche*/
+            .search-box {
+            position: relative; /*Permet superposition (Affecte pas autre élèment)*/
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 20%; 
+        }
+
+        /*Initiation texte saisie*/
+            .game-search-bar {
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            display: block;
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 100%;
+            text-align: center;
+            color: #D1FAE5;
+    
+            background-color: #065F46;
+            border-radius: 99999px;
+            border-color:#D1FAE5;
+            border-style:solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        /*Initiation texte dépard*/
+            .game-search-bar::placeholder { 
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            color: #D1FAE5;
+        }
+
+        /*Parametrage icon loupe*/
+        .search-icon {
+            position: absolute; /*Permet superposition (Affecte les autre élèment)*/
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+
+        /*Retrait croix (clear recherche)*/
+            /* Chrome, Edge, Safari */
+                input[type="search"]::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            /* Firefox */
+                input[type="search"]::-moz-search-clear {
+                display: none;
+}
+/*Body*/
+    /*Permet la couleur du body*/
+        #middle{
+            background-color: #112A0F;
+            padding-bottom: 50px;/*Saut de ligne (espacement)*/
+            height: 100%;
+             }
+.liste-jeux {
+  display: flex;
+  flex-wrap: wrap; /* multiple rows */
+  justify-content: center; /* centre toute les jeu */
+  gap: 30px; /* space chaque jeu */
+  padding: 20px;
+}
+
+.jeu {
+  text-align: justify;
+  padding: 1rem;
+  align-items: center;
+  align-content: space-between;
+  align-items: center;
+}
+.jeu img { 
+  color: white;
+  border-radius: 20px;
+  padding: 12px 18px;
+  width: 750px;
+  padding: 10px;
+}
+.jeu h2 {
+  display: flex;
+  text-align: justify;
+  font-family: Mixed;
+  font-size: 24px;
+  font-style: mixed;
+  color: #86EFAC;
+  margin-left: 0; /* start text at same horizontal point as image */
+  margin-top: 10px;
+}
+.jeu p {
+  font-family: Quicksand;
+  font-size: 24px;
+  font-weight: Semibold;
+  text-align: justify;
+  display: flex;
+  color: #86EFAC;
+  margin-left: 0; 
+  margin-top: 10px;
+}
+.mentionlegal {
+  text-align: center;
+  color: #D1FAE5;
+}
