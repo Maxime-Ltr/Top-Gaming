@@ -1,4 +1,9 @@
 /*HEAD*/
+    /*Retrait bordure blanche*/
+    body{
+        margin: 0px;
+    }
+
     /*Permet dégrader head*/
         .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
@@ -125,6 +130,29 @@
                 padding: 15px;
         }
         
+        /*Image jeu*/
+            .GameImage{
+                display: block;
+                align-items: center;
+                margin: auto;
+                width: 70%;
+                border-radius: 20px;
+
+                border: 1px;
+                border-style: solid;
+                border-color: transparent;
+
+                animation-duration: 300ms; /*Durée de l'animation*/
+                transition: all 300ms; /*Durée transition*/
+            }
+
+            .GameImage:hover{
+                border: 1px;
+                border-color: #D1FAE5;
+                border-style: solid; 
+                box-shadow: 0 0 10px #D1FAE5; /*Ombre de la boite (x1 = décal droite, x2 = décal bas, x3 = adoucisement ombre*/
+            }    
+
         /*Nom du jeu*/
             .NomJeu{
                 font-family: "Quicksand"; /*Police d'écriture*/
@@ -140,7 +168,8 @@
                 font-size: 18px;
                 font-weight: Regular;
                 color: #D1FAE5;
-                padding: 20px;
+                padding: 10px;
+                padding-bottom: 60px;
     }
 
     /*Vote*/
@@ -168,6 +197,31 @@
             border-style:solid;
             padding-top: 5px;
             padding-bottom: 5px;
+
+            animation-duration: 300ms;
+            transition: all 300ms;
+        }
+
+        /*Style bouton survoler*/
+        .VoteButton:hover {
+            border-style: solid;
+            border-color:#b2fcd6;
+            box-shadow: 0 0 10px #b2fcd6;
+
+            background-color: #057c5a;
+            color: #D1FAE5;
+        }        
+
+        /*Style bouton cliquer*/
+        .VoteButton:active {
+            transform: translate(0px,1px);
+            -webkit-transform: translate(0px,1px); /*Animation mouvement*/
+            border-bottom: 1px;
+            border-style: solid;
+            border-color:#b2fcd6;
+
+            background-color: #057c5a;
+            color: #D1FAE5;
         }
 
         /*Parametrage icon loupe*/
