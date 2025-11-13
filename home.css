@@ -84,7 +84,7 @@
         /*Parametrage icon loupe*/
         .search-icon {
             position: absolute; /*Permet superposition (Affecte les autre élèment)*/
-            right: 10px;
+            right: 15px;
             top: 50%;
             transform: translateY(-50%);
             width: 24px;
