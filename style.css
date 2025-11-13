@@ -3,45 +3,44 @@
         .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
         padding-bottom: 50px;/*Saut de ligne (espacement)*/
+        height: 100%;
     }
 
     /*Texte*/
+        /*Mise en forme général texte*/
+            #Presentation {
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: center; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+        }
+
         /*Mise en forme titre*/
-            h1 {
+            .NomSite {
                 font-family: "Changa One"; /*Police d'écriture*/
                 font-size: 90px; 
                 font-weight: 300; /*Taille des traits de la lettre*/
-                display: block;
-                margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-                width: 80%; /*Largeur max que prend l'affichage de l'écrant (responsive)*/
-                text-align: center;
                 color: #FFFFFF;
-        }
+                padding: 15px;
+        }        
 
-        /*Mise en forme sous-titre*/
-            h2 {
+        /*Mise en forme Sous-Titre*/
+            .SousTitrePresentation {
                 font-family: "Quicksand"; /*Police d'écriture*/
                 font-size: 25px;
                 font-weight: Regular; /*Taille des traits de la lettre*/
-                display: block;
-                margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-                width: 80%; /*Largeur max que prend l'affichage de l'écrant (responsive)*/
-                text-align: center;
                 color: #D1FAE5;
+                padding: 5px;
         }
 
         /*Mise en forme description*/
-            h3 {
-                font-family: "Exo 2"; /*Police d'écriture*/
-                font-size: 15px;
-                font-weight: Regular; /*Taille des traits de la lettre*/
-                display: block;
-                margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-                width: 80%; /*Largeur max que prend l'affichage de l'écrant (responsive)*/
-                text-align: center;
+            .DescriptionPresentation {
+                font-family: "Exo 2";
+                font-size: 18px;
+                font-weight: Regular;
                 color: #D1FAE5;
     }
-
+        
     /*Barre de recherche*/
         /*Paramétrage division barre de recherche*/
             .search-box {
@@ -100,3 +99,94 @@
                 display: none;
 }
 
+/*Body*/
+    /*Permet la couleur du body*/
+        #middle{
+            background-color: #112A0F;
+            padding-bottom: 50px;/*Saut de ligne (espacement)*/
+            height: 100%;
+    }
+    
+    /*Top 3 jeu*/
+        /*Forma texte général*/
+            #TOP3Jeu{
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: left; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+        }
+        
+        /*Titre TOP 3*/
+            .TitreBody{
+                font-family: "Changa One"; /*Police d'écriture*/
+                font-size: 50px; 
+                font-weight: 300; /*Taille des traits de la lettre*/
+                color: #FFFFFF;
+                padding: 15px;
+        }
+        
+        /*Nom du jeu*/
+            .NomJeu{
+                font-family: "Quicksand"; /*Police d'écriture*/
+                font-size: 30px;
+                font-weight: Regular; /*Taille des traits de la lettre*/
+                color: #D1FAE5;
+                padding: 5px;
+        }
+        
+        /*Description du jeu*/
+            .DescriptionJeu{
+                font-family: "Exo 2" !important;
+                font-size: 18px;
+                font-weight: Regular;
+                color: #D1FAE5;
+                padding: 20px;
+    }
+
+    /*Vote*/
+        /*Paramétrage division barre de recherche*/
+            .vote-box {
+            position: relative; /*Permet superposition (Affecte pas autre élèment)*/
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 30%; 
+        }
+
+        /*Initiation texte saisie*/
+            .VoteButton {
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            display: block;
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 100%;
+            text-align: center;
+            color: #D1FAE5;
+    
+            background-color: #065F46;
+            border-radius: 99999px;
+            border-color:#D1FAE5;
+            border-style:solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        /*Parametrage icon loupe*/
+        .vote-icon {
+            position: absolute; /*Permet superposition (Affecte les autre élèment)*/
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+
+        /*Formatage Description vote*/
+        .VoteDescription{
+            font-family: "Quicksand"; /*Police d'écriture*/
+            font-size: 18px;
+            font-weight: Regular; /*Taille des traits de la lettre*/
+            color: #D1FAE5;
+            padding: 5px;
+            text-align: center;
+        }

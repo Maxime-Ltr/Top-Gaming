@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Intégration police-->
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
     <div class="top">
          <!-- Navigation site-->
             <title>TOP Steam Gaming</title>
@@ -12,24 +21,18 @@
             <!-- Saut de ligne-->
                 <br>
                 <br>
-                <h1>Top Steam Gaming</h1>
+            <h1 id="Presentation" class="NomSite">Top Steam Gaming</h1>
 
         <!-- Description (Page Home)-->
-            <!-- Saut de ligne-->
-                <br>
-            <h2>🎮 Bienvenue sur notre site dédié aux gamers !</h2> 
-            <!-- Saut de ligne-->
-                <br>
-            <h3>Ici, découvrez chaque semaine le top 3 des jeux les plus populaires.</h3> 
-            <h3>Mais ce n’est pas tout : votez pour votre jeu préféré et tentez de le faire entrer dans le classement de la semaine suivante !</h3> 
+            <h2 id="Presentation" class="SousTitrePresentation">🎮 Bienvenue sur notre site dédié aux gamers !</h2> 
+            <h3 id="Presentation" class="DescriptionPresentation">Ici, découvrez chaque semaine le top 3 des jeux les plus populaires.</h3> 
+            <h3 id="Presentation" class="DescriptionPresentation">Mais ce n’est pas tout : votez pour votre jeu préféré et tentez de le faire entrer dans le classement de la semaine suivante !</h3> 
             <!-- Saut de ligne-->
                 <br>
                 <br>
-            <h2>🔥 Envie d’en savoir plus sur un jeu ?</h2> 
-            <!-- Saut de ligne-->
-                <br>
-            <h3>Accédez facilement à toutes les infos sur les jeux Steam : description, image, et plus encore !</h3> 
-            <h3>Rejoins la communauté, fais entendre ta voix et découvre de nouveaux jeux chaque semaine !</h3> 
+            <h2 id="Presentation" class="SousTitrePresentation">🔥 Envie d’en savoir plus sur un jeu ?</h2> 
+            <h3 id="Presentation" class="DescriptionPresentation">Accédez facilement à toutes les infos sur les jeux Steam : description, image, et plus encore !</h3> 
+            <h3 id="Presentation" class="DescriptionPresentation">Rejoins la communauté, fais entendre ta voix et découvre de nouveaux jeux chaque semaine !</h3> 
             <!-- Saut de ligne-->
                 <br>
                 <br>
@@ -45,14 +48,29 @@
                 </div>
     </div>
 
-    <!-- Intégration police-->
-        <link rel="stylesheet" type="text/css" href="./style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-</head>
-<body>
-    <h5>Salut</h5>
+    <div id="middle">
+        <!-- Présentation jeu top 3-->
+            <!-- Ajout titre-->   
+                <h2 id="TOP3Jeu" class="TitreBody"><u>TOP 3 jeux du moment</u></h2>
+
+            <!-- Ajout image jeu-->
+                <img src="\\SRV-DC\mlautieral$\Desktop\jeu\Picture\ImageJeu.png" class="GameImage">
+
+            <!-- Ajout des textes-->
+                <h3 id="TOP3Jeu" class="NomJeu">Nom jeu</h3>
+                <p id="TOP3Jeu" class="DescriptionJeu"><b><u>Description :</u></b> Description brief du jeu avec détail important</p>
+        
+        <!-- Vote-->
+            <div class="vote-box">
+                <!-- Intégration bouton-->
+                    <button class="VoteButton">Voter</button>
+                    <img src="\\SRV-DC\mlautieral$\Desktop\jeu\Picture\Vote.png" class="vote-icon">
+                </div>
+
+                <!-- Description vote-->
+                    <p class="VoteDescription">L'option de vote vous permet de choisir votre jeu préférer du moment, afin d'espérer le voir dans les jeux de la semaine.</p>
+        
+    </div>
 </body>
 </html>
