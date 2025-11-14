@@ -12,14 +12,6 @@
     }
 
     /*Texte*/
-        /*Mise en forme général texte*/
-            #Presentation {
-                display: block; /*Définie comment agit les éléments*/
-                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
-                text-align: center; /*Centre le texte*/
-                width: 80%; /*Permet de définir la taille max sur écrant*/
-        }
-
         /*Mise en forme titre*/
             .NomSite {
                 font-family: "Changa One"; /*Police d'écriture*/
@@ -27,6 +19,10 @@
                 font-weight: 300; /*Taille des traits de la lettre*/
                 color: #FFFFFF;
                 padding: 15px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: center; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
         }        
 
         /*Mise en forme Sous-Titre*/
@@ -36,14 +32,22 @@
                 font-weight: Regular; /*Taille des traits de la lettre*/
                 color: #D1FAE5;
                 padding: 5px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: center; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
         }
 
         /*Mise en forme description*/
             .DescriptionPresentation {
                 font-family: "Exo 2";
                 font-size: 18px;
-                font-weight: Regular;
+                font-weight: 400;
                 color: #D1FAE5;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: center; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
     }
         
     /*Barre de recherche*/
@@ -71,6 +75,7 @@
             border-style:solid;
             padding-top: 5px;
             padding-bottom: 5px;
+            padding-right: 35px;
         }
 
         /*Initiation texte dépard*/
@@ -113,14 +118,6 @@
     }
     
     /*Top 3 jeu*/
-        /*Forma texte général*/
-            #TOP3Jeu{
-                display: block; /*Définie comment agit les éléments*/
-                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
-                text-align: left; /*Centre le texte*/
-                width: 80%; /*Permet de définir la taille max sur écrant*/
-        }
-        
         /*Titre TOP 3*/
             .TitreBody{
                 font-family: "Changa One"; /*Police d'écriture*/
@@ -128,6 +125,10 @@
                 font-weight: 300; /*Taille des traits de la lettre*/
                 color: #FFFFFF;
                 padding: 15px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: left; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
         }
         
         /*Image jeu*/
@@ -160,6 +161,10 @@
                 font-weight: Regular; /*Taille des traits de la lettre*/
                 color: #D1FAE5;
                 padding: 5px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: left; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
         }
         
         /*Description du jeu*/
@@ -170,6 +175,10 @@
                 color: #D1FAE5;
                 padding: 10px;
                 padding-bottom: 60px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: left; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
     }
 
     /*Vote*/
@@ -215,7 +224,6 @@
         /*Style bouton cliquer*/
         .VoteButton:active {
             transform: translate(0px,1px);
-            -webkit-transform: translate(0px,1px); /*Animation mouvement*/
             border-bottom: 1px;
             border-style: solid;
             border-color:#b2fcd6;
@@ -243,4 +251,43 @@
             color: #D1FAE5;
             padding: 5px;
             text-align: center;
-        }
+}
+
+/*Footer*/
+    /*Fond du footer*/
+    .footer{
+        background : linear-gradient(#112A0F, #065F46, #065F46);
+        padding-top: 60px;
+        height: 100%;
+    }
+
+    /*Mise en forme global des LINK*/
+    .lien{
+        display: flex; /*Définie comment agit les éléments*/
+        justify-content: space-evenly;
+        margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+        text-align:center; /*Centre le texte*/
+    }
+
+    /*Mise en forme de chaque LINK*/
+    .Link{
+        font-family: "Exo 2";
+        color: #D1FAE5;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        transform: all 300ms;
+        padding-bottom: 30px;
+    }
+
+    /*Sytle des lien en survole*/
+    .Link:hover{
+        text-shadow: 0 0 5px #b2fcd6;
+        color: #D1FAE5;
+    }
+
+    /*Sytle des lien en survole*/
+    .Link:active{
+        color: #61c893;
+        transform: translateY(1px);
+    }
