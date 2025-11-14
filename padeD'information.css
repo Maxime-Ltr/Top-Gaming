@@ -5,7 +5,6 @@ body {
 .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
         padding-bottom: 50px;/*Saut de ligne (espacement)*/
-        height: 100%;
 }
 .top h1 {
   font-family: Changa One; /* police */
@@ -76,7 +75,6 @@ body {
         #middle{
             background-color: #112A0F;
             padding-bottom: 50px;/*Saut de ligne (espacement)*/
-            height: 100%;
              }
              
 /* LISTE DE CHAQUE JEU */
@@ -193,3 +191,77 @@ body {
     .IconFooter:active{
         transform: translateY(1px);
         }
+/* Code Responsive pour Navigateur */
+@media (max-width: 1024px) {
+
+    .top h1 {
+        font-size: 48px;
+    }
+
+    .search-box {
+        width: 40%;
+    }
+
+    .jeu img {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .jeu p {
+        font-size: 20px;
+    }
+
+    .imageLien {
+        width: 90%;
+    }
+}
+
+/* Code responsive pour PHONE */
+@media (max-width: 600px) {
+
+    .top h1 {
+        font-size: 36px;
+    }
+
+    .search-box {
+        width: 70%;
+    }
+
+    .liste-jeux {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .jeu {
+        padding: 0.5rem;
+    }
+
+    .jeu img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .jeu h2 {
+        font-size: 20px;
+    }
+
+    .jeu p {
+        font-size: 16px;
+    }
+
+    .lien {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .imageLien {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .LogoGit, .LogoFigma, .LogoAgora {
+        width: 45px;
+    }
+}
