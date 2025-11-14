@@ -119,6 +119,10 @@ body {
   margin-left: 0; 
   margin-top: 10px;
 }
+.lien {
+  color: #86EFAC;
+  text-decoration: none;
+}
 .mentionlegal {
   text-align: center;
   color: #D1FAE5;
