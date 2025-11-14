@@ -3,8 +3,7 @@ body {
 }
 .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
-        padding-bottom: 50px;/*Saut de ligne (espacement)*/
-        height: 100%;
+        padding-bottom: 20px;/*Saut de ligne (espacement)*/
 }
 .top h1 {
   font-family: Changa One; /* police */
@@ -12,16 +11,18 @@ body {
   font-size: 64px; /* taille de police */
   text-align: center;
   color: white; /* la coleur */
+  margin-top: 20px;       /* petit espace au-dessus si tu veux */
+  margin-bottom: 20px;    /* espace propre sous le titre */
 }
 .middle {
     background-color: #112A0F;
     padding-bottom: 50px;
     height: 100%;
-    
+
     display: flex;
-    flex-direction: column;   
-    justify-content: center;  
+    flex-direction: column;
     align-items: center;    
+    justify-content: flex-start; 
 }
 .middle img {
   display: block;       
