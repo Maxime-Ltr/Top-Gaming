@@ -257,7 +257,7 @@
     /*Fond du footer*/
     .footer{
         background : linear-gradient(#112A0F, #065F46, #065F46);
-        padding-top: 60px;
+        padding-top: 80px;
         height: 100%;
     }
 
@@ -278,6 +278,8 @@
         position: relative;
         transform: all 300ms;
         padding-bottom: 30px;
+
+        animation: all 300ms;
     }
 
     /*Sytle des lien en survole*/
@@ -289,5 +291,32 @@
     /*Sytle des lien en survole*/
     .Link:active{
         color: #61c893;
+        transform: translateY(1px);
+    }
+
+    /*Style général des logos*/
+    .imageLien{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*Style spécific des logos*/
+    .LogoGit{
+        width: 50px;
+    }
+
+    .LogoFigma{
+        width: 40px ;
+        height: 50px;
+    }
+    .LogoAgora{
+        width: 70px;
+        
+    }
+
+    /*Style logo survol*/
+    .IconFooter:active{
         transform: translateY(1px);
     }
