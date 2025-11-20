@@ -10,6 +10,7 @@
     
     <!--Lien page css-->    
         <link rel="stylesheet" type="text/css" href="./home.css">
+        <link rel="stylesheet" type="texte/css" href="./vote.css">
         
     <!-- Intégration police-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,13 +67,47 @@
         <!-- Vote-->
             <div class="vote-box">
                 <!-- Intégration bouton-->
-                    <button class="VoteButton">Voter</button>
+                    <button class="VoteButton" id="OpenPopUp">Voter</button>
                     <img src="https://i.goopics.net/sfbow8.png" class="vote-icon">
-                </div>
+            </div>
 
                 <!-- Description vote-->
                     <p class="VoteDescription">L'option de vote vous permet de choisir votre jeu préférer du moment, afin d'espérer le voir dans les jeux de la semaine.</p>
         
+            <div id="PopUp" class="PopUp">
+                <!--Ajout fenêtre Pop-Up-->
+                <div class="PopUpContent">
+                    <!--Ajout des catégorie-->
+                        <h2 class="PopUpTitle">Vote</h2>
+                        <p class="PopUpDescription">Vote pour ton jeu préférer mais avant, renseigne nous quelque information.</p>
+                        
+                        <h3 class="PopUpInput">Votre pseudo</h3>
+                        <input type="text" class="InputVote Pseudo" placeholder="Ex. StLm_SkyEyes_">
+                        
+                        <h3 class="PopUpInput">Votre jeu préférer</h3>
+                        <input type="text" class="InputVote GameVoted" placeholder="Ex. GTA V">
+                        
+                        <h3 class="PopUpInput">Légère description du jeu</h3>
+                        <input type="text" class="InputVote VotedGameDescription" placeholder="Ex. Jolie jeu, pationnant...">
+
+                        <h3 class="PopUpInput">Dernier jour jouer</h3>
+                        <input type="date" class="InputVote DatePlay" placeholder="Quand est-ce la dernier fois que vous y avais jouer ?">
+
+                        <h3 class="PopUpInput">Note sur 5</h3>
+                        <input type="range" class="SliderVote">
+                        <br>
+                        <br>
+
+                        <button id="SoumettreVote" class="VotePopUp">Soumettre mon vote</button>
+
+                    <!--Ajout croix pour fermer-->
+                        <br>
+                        <input type="image" id="closePopup" class="close" src="https://i.goopics.net/49z18s.png">
+                    
+                        <script src="./home.js"></script>
+
+                </div>
+            </div>
     </div>
 
 
