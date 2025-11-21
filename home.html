@@ -85,16 +85,17 @@
                         <input type="text" class="InputVote Pseudo" placeholder="Ex. StLm_SkyEyes_">
                         
                         <h3 class="PopUpInput">Votre jeu préférer</h3>
-                        <input type="text" class="InputVote GameVoted" placeholder="Ex. GTA V">
+                        <input type="text" id="VotedGame" class="InputVote GameVoted" placeholder="Ex. GTA V">
                         
                         <h3 class="PopUpInput">Légère description du jeu</h3>
-                        <input type="text" class="InputVote VotedGameDescription" placeholder="Ex. Jolie jeu, pationnant...">
+                        <input type="text" id="DescriptionGameVoted" class="InputVote VotedGameDescription" placeholder="Ex. Jolie jeu, pationnant...">
 
                         <h3 class="PopUpInput">Dernier jour jouer</h3>
-                        <input type="date" class="InputVote DatePlay" placeholder="Quand est-ce la dernier fois que vous y avais jouer ?">
+                        <input type="date" id="DatePlay" class="InputVote DatePlay" placeholder="Quand est-ce la dernier fois que vous y avais jouer ?">
 
                         <h3 class="PopUpInput">Note sur 5</h3>
-                        <input type="range" class="SliderVote">
+                        <input type="range" id="Note" class="SliderVote" min="0" max="10">
+                        <p class="PopUpInput Note" id="NoteUser">0 étoile sur 5</p>
                         <br>
                         <br>
 
