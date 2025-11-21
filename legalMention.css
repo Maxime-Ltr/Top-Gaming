@@ -38,6 +38,56 @@
                 width: 80%; /*Permet de définir la taille max sur écrant*/
 }
 
+/*Middle*/
+    /*Mise en forme général*/
+    .middle{
+        background-color: #112A0F;
+        width: 100%;
+    }
+
+    .catégorie{
+        font-family: "Quicksand"; /*Police d'écriture*/
+        font-size: 25px;
+        font-weight: Regular; /*Taille des traits de la lettre*/
+        color: #D1FAE5;
+        padding: 5px;
+        display: block; /*Définie comment agit les éléments*/
+        margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+        text-align: left; /*Centre le texte*/
+        width: 80%; /*Permet de définir la taille max sur écrant*/
+    }
+
+    .paragraph{
+        font-family: "Exo 2";
+        font-size: 18px;
+        font-weight: 400;
+        color: #D1FAE5;
+        display: block; /*Définie comment agit les éléments*/
+        margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+        text-align: left; /*Centre le texte*/
+        width: 80%; /*Permet de définir la taille max sur écrant*/
+        padding-bottom: 10px;
+        padding-left: 80px;
+    }
+
+    .point{
+        font-family: "Exo 2";
+        font-size: 13px;
+        font-weight: 400;
+        color: #D1FAE5;
+
+        display: block; /*Définie comment agit les éléments*/
+        margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+        text-align: left; /*Centre le texte*/
+        width: 80%; /*Permet de définir la taille max sur écrant*/
+        padding-bottom: 10px;
+        padding-left: 150px;
+
+            list-style: disc;
+            list-style-position: inside;
+
+    }
+
 /*Footer*/
     /*Fond du footer*/
     .footer{
