@@ -9,39 +9,11 @@ async function fetchGame(appId) {
     try {
         const res = await fetch(`http://localhost:3000/game/${appId}`);
         const data = await res.json();
-
-        console.log("Data from server for", appId, data); // DEBUG
-
-        // Vérifier si la requête Steam a réussi
-        if (data[appId] && data[appId].success) {
-            return data[appId].data;
-        } else {
-            console.warn(`Steam API returned no data for appId ${appId}`);
-            return null;
-        }
+        return data[appId]?.data || null;
     } catch (err) {
-        console.error("Error fetching game", appId, err);
+        console.error(err);
         return null;
     }
-}
-
-// Créer une carte de jeu
-function createGameCard(appId, info) {
-    const cardLink = document.createElement("a"); // lien cliquable
-    cardLink.href = `jeu.html?appId=${appId}`;
-    cardLink.className = "jeu-link";
-    cardLink.target = "_self";
-
-    const card = document.createElement("div");
-    card.className = "jeu";
-    card.innerHTML = `
-        <img src="${info.header_image}" alt="${info.name}">
-        <h2>${info.name}</h2>
-        <p>${info.short_description}</p>
-    `;
-
-    cardLink.appendChild(card);
-    gameList.appendChild(cardLink);
 }
 
 // Charger les jeux par défaut
@@ -51,21 +23,34 @@ async function loadDefaultGames() {
 
     for (const appId of defaultGames) {
         const info = await fetchGame(appId);
-        if (!info) continue; // Ignore les jeux qui n'ont pas de data
+        if (!info) continue;
 
-        createGameCard(appId, info);
+        const cardLink = document.createElement("a"); // lien cliquable
+        cardLink.href = `jeu.html?appId=${appId}`;
+        cardLink.className = "jeu-link"; // pour le style
+        cardLink.target = "_self"; // ouvre dans le même onglet
+
+        const card = document.createElement("div");
+        card.className = "jeu";
+        card.innerHTML = `
+            <img src="${info.header_image}" alt="${info.name}">
+            <h2>${info.name}</h2>
+            <p>${info.short_description}</p>
+`;
+
+cardLink.appendChild(card);
+gameList.appendChild(cardLink);
     }
 
     loading.style.display = "none";
 }
 
-// Charger les jeux quand la page est prête
-window.addEventListener("DOMContentLoaded", loadDefaultGames);
-
 // Rechercher des jeux
 async function searchGames(query) {
     loading.style.display = "block";
     gameList.innerHTML = "";
+
+    const addedGames = new Set(); 
 
     try {
         const res = await fetch(`http://localhost:3000/search/${encodeURIComponent(query)}`);
@@ -77,8 +62,15 @@ async function searchGames(query) {
         }
 
         for (const item of data.items) {
+            if (addedGames.has(item.id)) continue;  
+
             const info = await fetchGame(item.id);
             if (!info) continue;
+
+            const cardLink = document.createElement("a");
+            cardLink.href = `jeu.html?appId=${item.id}`;
+            cardLink.className = "jeu-link";
+            cardLink.target = "_self";
 
             const card = document.createElement("div");
             card.className = "jeu";
@@ -87,7 +79,11 @@ async function searchGames(query) {
                 <h2>${info.name}</h2>
                 <p>${info.short_description}</p>
             `;
-            gameList.appendChild(card);
+
+            cardLink.appendChild(card);
+            gameList.appendChild(cardLink);
+
+            addedGames.add(item.id);  // <-- Marque ce jeu comme ajouté
         }
     } catch (err) {
         console.error(err);
@@ -96,6 +92,7 @@ async function searchGames(query) {
 
     loading.style.display = "none";
 }
+
 
 // Événement Enter sur l'input
 searchInput.addEventListener("keypress", (e) => {
