@@ -76,54 +76,68 @@ body {
             background-color: #112A0F;
             padding-bottom: 50px;/*Saut de ligne (espacement)*/
              }
-             
+            
 /* LISTE DE CHAQUE JEU */
 .liste-jeux {
-  display: flex;
-  flex-wrap: wrap; /* multiple rows */
-  justify-content: center; /* centre toute les jeu */
-  gap: 30px; /* space de chaque jeu */
-  padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 per row */
+    gap: 40px;
+    width: 95%;
+    margin: auto;
 }
 
+/* Chaque Jeu */
 .jeu {
-  text-align: justify;
-  padding: 1rem;
-  align-items: center;
-  align-content: space-between;
-  align-items: center;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: Semibold;
 }
-.jeu img { 
-  color: white;
-  border-radius: 20px;
-  padding: 12px 18px;
-  width: 750px;
-  padding: 10px;
-}
-.jeu h2 {
-  display: flex;
-  text-align: justify;
-  font-family: Mixed;
-  font-size: 24px;
-  font-style: mixed;
-  color: #86EFAC;
-  margin-left: 0; /* start text at same horizontal point as image */
-  margin-top: 10px;
-}
-.jeu p {
-  font-family: "Exo 2";
-  font-size: 24px;
-  font-weight: Semibold;
 
-  text-align: justify;
-  display: flex;
-  color: #86EFAC;
-  margin-left: 0; 
-  margin-top: 10px;
+/* Image identical to picture 2 */
+.jeu img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
+
+.jeu img:hover {
+    transform: scale(1.10) rotate(0deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+/* Title style */
+.jeu h2 {
+    font-family: "Changa One";
+    font-size: 28px;
+    font-weight: normal;
+    color: #86EFAC;
+    margin: 0;
+}
+
+/* Description style */
+.jeu p {
+    font-family: "Exo 2";
+    font-size: 20px;
+    color: #86EFAC;
+    text-align: justify;
+    margin: 0;
+}
+/* Lien qui englobe la carte */
+.jeu-link {
+    text-decoration: none; /* retire le soulignement */
+    color: inherit;        /* garde la couleur du texte */
+    display: block;
+}
+/* Link style */
 .decor {
-  color: #86EFAC;
-  text-decoration: none;
+    color: #86EFAC;
+    text-decoration: none;
 }
 
 /*Footer*/

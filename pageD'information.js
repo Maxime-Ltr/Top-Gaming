@@ -1,0 +1,63 @@
+const searchInput = document.getElementById("game-search");
+const gameList = document.getElementById("game-list");
+const loading = document.getElementById("loading");
+
+const defaultGames = [730, 271590, 1091500, 1245620];
+
+// Récupérer les infos d'un jeu
+async function fetchGame(appId) {
+    try {
+        const res = await fetch(`http://localhost:3000/game/${appId}`);
+        const data = await res.json();
+
+        console.log("Data from server for", appId, data); // DEBUG
+
+        // Vérifier si la requête Steam a réussi
+        if (data[appId] && data[appId].success) {
+            return data[appId].data;
+        } else {
+            console.warn(`Steam API returned no data for appId ${appId}`);
+            return null;
+        }
+    } catch (err) {
+        console.error("Error fetching game", appId, err);
+        return null;
+    }
+}
+
+// Créer une carte de jeu
+function createGameCard(appId, info) {
+    const cardLink = document.createElement("a"); // lien cliquable
+    cardLink.href = `jeu.html?appId=${appId}`;
+    cardLink.className = "jeu-link";
+    cardLink.target = "_self";
+
+    const card = document.createElement("div");
+    card.className = "jeu";
+    card.innerHTML = `
+        <img src="${info.header_image}" alt="${info.name}">
+        <h2>${info.name}</h2>
+        <p>${info.short_description}</p>
+    `;
+
+    cardLink.appendChild(card);
+    gameList.appendChild(cardLink);
+}
+
+// Charger les jeux par défaut
+async function loadDefaultGames() {
+    loading.style.display = "block";
+    gameList.innerHTML = "";
+
+    for (const appId of defaultGames) {
+        const info = await fetchGame(appId);
+        if (!info) continue; // Ignore les jeux qui n'ont pas de data
+
+        createGameCard(appId, info);
+    }
+
+    loading.style.display = "none";
+}
+
+// Charger les jeux quand la page est prête
+window.addEventListener("DOMContentLoaded", loadDefaultGames);

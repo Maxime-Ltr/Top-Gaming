@@ -1,0 +1,28 @@
+{
+  "name": "top-gaming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pageD'information.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxime-Ltr/Top-Gaming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Maxime-Ltr/Top-Gaming/issues"
+  },
+  "homepage": "https://github.com/Maxime-Ltr/Top-Gaming#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^2.7.0"
+  }
+}
