@@ -280,3 +280,9 @@ body {
         width: 45px;
     }
 }
+#loading {
+    display: none; 
+    text-align:center; 
+    color:#86EFAC; 
+    font-size:20px;
+}
