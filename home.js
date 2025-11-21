@@ -45,6 +45,9 @@
 
                     localStorage.setItem('time', new Date().getTime())
             }
+            else{
+                alert("Veuillez renseignez toute les réponses au questionnaire")
+            }
         }
 
         // Fermer en cliquant hors de la pop-up
