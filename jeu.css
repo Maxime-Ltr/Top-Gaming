@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background: #065F46;
+  overflow-x: hidden; /* Empêche tout débordement horizontal */
 }
 .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
@@ -8,7 +10,7 @@ body {
 .top h1 {
   font-family: Changa One; /* police */
   font-style: regular; /* style de police */
-  font-size: 64px; /* taille de police */
+  font-size: clamp(2rem, 5vw, 4rem); /* taille de police */
   text-align: center;
   color: white; /* la coleur */
   margin-top: 20px;       /* petit espace au-dessus si tu veux */
@@ -24,43 +26,42 @@ body {
     align-items: center;    
     justify-content: flex-start; 
 }
+/* Règles pour rendre l'image de la section middle responsive */
 .middle img {
-  display: block;       
-  margin: 0 auto;       
-  background: transparent;
-  border-radius: 20px;
-  padding: 10px 12px;
-  width: 950px;
+    width: 100% !important;   /* L'image prend toute la largeur du conteneur */
+    max-width: 950px;          /* Limite maximale pour grands écrans */
+    height: auto;              /* Conserve les proportions */
+    display: block;            /* Supprime les espaces indésirables */
+    margin: 0 auto;            /* Centre l'image horizontalement */
+    border-radius: 20px;       /* Coins arrondis */
+    padding: 10px 12px;        /* Espacement interne */
 }
-.description p {
-  font-family: Quicksand;
-  font-size: 20px;
-  font-weight: Semibold;
+.description {
+    width: 950px;
+    width: 90%;
+    max-width: 950px;
+    margin: 10px auto 0 auto; /* centers the whole block */
+    text-align: left;
+    color: #86EFAC;
+    background: transparent !important;
 
-  text-align: left;
-  display: block;
-  width: 950px; 
-  color: #86EFAC;
-
-  margin: auto;
-  margin-top: 10px;
-  margin-left: auto; 
-  margin-right: auto;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: Semibold
 }
 /*Footer*/
     /*Fond du footer*/
     .footer{
         background : linear-gradient(#112A0F, #065F46, #065F46);
         padding-top: 80px;
-        height: 100%;
     }
-
     /*Mise en forme global des LINK*/
     .lien{
         display: flex; /*Définie comment agit les éléments*/
         justify-content: space-evenly;
         margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
         text-align:center; /*Centre le texte*/
+        flex-wrap: wrap;
     }
 
     /*Mise en forme de chaque LINK*/
@@ -75,8 +76,7 @@ body {
 
         animation: all 300ms;
     }
-
-    /*Sytle des lien en survole*/
+     /*Sytle des lien en survole*/
     .Link:hover{
         text-shadow: 0 0 5px #b2fcd6;
         color: #D1FAE5;
@@ -107,10 +107,10 @@ body {
     }
     .LogoAgora{
         width: 70px;
-        transform: translateY(+50%);
+        
     }
 
     /*Style logo survol*/
     .IconFooter:active{
         transform: translateY(1px);
-    }
+        }
