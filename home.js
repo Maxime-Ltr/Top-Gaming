@@ -5,20 +5,25 @@
         const closeBtn = document.getElementById("closePopup");
         const popup = document.getElementById("PopUp");
         const voteBtn = document.getElementById("SoumettreVote");
+        let timer = localStorage.getItem('time')
+
+        const Pseudo = document.getElementById("PseudoUser")
 
         //Définition des variable (permetant le reset des catégotie)
-        const Slider = document.getElementById("Note");
+        const slider = document.getElementById("Note");
         const Jeu = document.getElementById("VotedGame");
         const DescriptionJeu = document.getElementById("DescriptionGameVoted")
         const dateJeu = document.getElementById("DatePlay")
+        const AffichageNote = document.getElementById("NoteUser");
 
         // Quand le bouton est cliqué définir PopUp comme visible
         openBtn.onclick = () => {
-            PopUp.style.display = "block";
-            Jeu.value = ""
-            DescriptionJeu.value = ""
-            dateJeu.value = ""
-            Slider.value = 0
+            let diftime = (new Date().getTime() - parseFloat(timer)) / 60000 // parseFloat permet d'arrondir
+            if(diftime < 120) {
+                alert(`Vous devez attendre encore ${(120 - diftime).toFixed(0)} minutes à attendre !`) // ${} permet d'inclure une variable
+            } else {
+                PopUp.style.display = "block";   
+            }
         };
 
         // Fermer en cliquant sur la croix
@@ -28,7 +33,18 @@
 
         // Fermer en soumettant son vote
         voteBtn.onclick = () => {
-            PopUp.style.display = "none";
+            if(Jeu.value && DescriptionJeu.value && dateJeu.value && Pseudo.value){
+                PopUp.style.display = "none";
+                
+                // Reset valeur saisie précédement
+                    Jeu.value = ""
+                    DescriptionJeu.value = ""
+                    dateJeu.value = ""
+                    slider.value = 0
+                    AffichageNote.textContent = "0 étoile sur 5"
+
+                    localStorage.setItem('time', new Date().getTime())
+            }
         }
 
         // Fermer en cliquant hors de la pop-up
@@ -39,10 +55,6 @@
     };
 
     // Note sur 5 PopUp
-        // Définition des variable
-            const slider = document.getElementById("Note"); // Définition variable (mise en place chemin d'accès)
-            const AffichageNote = document.getElementById("NoteUser"); // Définition variable (mise en place chemin d'accès)
-
         // Modification du texte (selon le slider) 
             slider.addEventListener("input", function () {
 
