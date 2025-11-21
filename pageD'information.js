@@ -61,3 +61,49 @@ async function loadDefaultGames() {
 
 // Charger les jeux quand la page est prête
 window.addEventListener("DOMContentLoaded", loadDefaultGames);
+
+// Rechercher des jeux
+async function searchGames(query) {
+    loading.style.display = "block";
+    gameList.innerHTML = "";
+
+    try {
+        const res = await fetch(`http://localhost:3000/search/${encodeURIComponent(query)}`);
+        const data = await res.json();
+
+        if (!data.items || data.items.length === 0) {
+            gameList.innerHTML = "<p style='text-align:center; color:#86EFAC;'>Aucun jeu trouvé.</p>";
+            return;
+        }
+
+        for (const item of data.items) {
+            const info = await fetchGame(item.id);
+            if (!info) continue;
+
+            const card = document.createElement("div");
+            card.className = "jeu";
+            card.innerHTML = `
+                <img src="${info.header_image || item.large_capsule}" alt="${info.name}">
+                <h2>${info.name}</h2>
+                <p>${info.short_description}</p>
+            `;
+            gameList.appendChild(card);
+        }
+    } catch (err) {
+        console.error(err);
+        gameList.innerHTML = "<p style='text-align:center; color:#86EFAC;'>Erreur lors de la récupération des jeux.</p>";
+    }
+
+    loading.style.display = "none";
+}
+
+// Événement Enter sur l'input
+searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        const query = searchInput.value.trim();
+        if (query) searchGames(query);
+    }
+});
+
+// Chargement initial
+loadDefaultGames();
