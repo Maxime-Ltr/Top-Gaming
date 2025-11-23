@@ -59,7 +59,7 @@
 
     .paragraph{
         font-family: "Exo 2";
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
         color: #D1FAE5;
         display: block; /*Définie comment agit les éléments*/
@@ -72,7 +72,7 @@
 
     .point{
         font-family: "Exo 2";
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 400;
         color: #D1FAE5;
 
