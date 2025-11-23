@@ -1,13 +1,15 @@
+
 const searchInput = document.getElementById("game-search");
 const gameList = document.getElementById("game-list");
 const loading = document.getElementById("loading");
 
+// Jeux par défaut les 4 Jeux
 const defaultGames = [730, 271590, 1091500, 1245620];
 
 // Récupérer les infos d'un jeu
 async function fetchGame(appId) {
     try {
-        const res = await fetch(`http://localhost:3000/game/${appId}`);
+        const res = await fetch(`http://localhost:3000/game/${appId}`); // server.js
         const data = await res.json();
         return data[appId]?.data || null;
     } catch (err) {
@@ -24,7 +26,8 @@ async function loadDefaultGames() {
     for (const appId of defaultGames) {
         const info = await fetchGame(appId);
         if (!info) continue;
-
+        
+        // Création d’une carte pour chaque jeu 
         const cardLink = document.createElement("a"); // lien cliquable
         cardLink.href = `jeu.html?appId=${appId}`;
         cardLink.className = "jeu-link"; // pour le style
@@ -38,7 +41,7 @@ async function loadDefaultGames() {
             <p>${info.short_description}</p>
 `;
 
-cardLink.appendChild(card);
+cardLink.appendChild(card); // <-- rend toute la carte cliquable
 gameList.appendChild(cardLink);
     }
 
@@ -66,7 +69,8 @@ async function searchGames(query) {
 
             const info = await fetchGame(item.id);
             if (!info) continue;
-
+             
+            // Création de la carte de jeu pour la recherche
             const cardLink = document.createElement("a");
             cardLink.href = `jeu.html?appId=${item.id}`;
             cardLink.className = "jeu-link";

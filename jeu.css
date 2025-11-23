@@ -9,7 +9,7 @@ body {
 }
 .top h1 {
   font-family: Changa One; /* police */
-  font-style: regular; /* style de police */
+  font-weight: bold; /* style de police */
   font-size: clamp(2rem, 5vw, 4rem); /* taille de police */
   text-align: center;
   color: white; /* la coleur */

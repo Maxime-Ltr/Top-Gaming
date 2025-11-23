@@ -12,7 +12,7 @@ app.use(cors());
 // Route pour récupérer les infos d'un jeu Steam
 app.get("/game/:appId", async (req, res) => {
     const appId = req.params.appId;
-    const steamURL = `https://store.steampowered.com/api/appdetails?appids=${appId}&l=french`;
+    const steamURL = `https://store.steampowered.com/api/appdetails?appids=${appId}&l=french`; // API
 
     try {
         const response = await fetch(steamURL);
