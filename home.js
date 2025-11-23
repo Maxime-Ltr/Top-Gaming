@@ -16,15 +16,34 @@
         const dateJeu = document.getElementById("DatePlay")
         const AffichageNote = document.getElementById("NoteUser");
 
+        // Ajout convertion minute -> heure + min
+        function formatMinutes(mins) {
+            const hours = Math.floor(mins / 60);
+            const minutes = mins % 60;
+
+            if (hours > 0 && minutes > 0) {
+                return `${hours}h${minutes}`;
+            } else if (hours > 0) {
+                return `${hours}h`;
+            } else {
+                return `${minutes} min`;
+            }
+        }
+
+
         // Quand le bouton est cliqué définir PopUp comme visible
         openBtn.onclick = () => {
-            let diftime = (new Date().getTime() - parseFloat(timer)) / 60000 // parseFloat permet d'arrondir
-            if(diftime < 120) {
-                alert(`Vous devez attendre encore ${(120 - diftime).toFixed(0)} minutes à attendre !`) // ${} permet d'inclure une variable
+            let diftime = 120 - ((new Date().getTime() - parseFloat(timer)) / 60000);
+
+            const formattedTime = formatMinutes(Math.floor(diftime));
+
+            if (diftime < 120) {
+                alert(`Vous devez attendre encore ${formattedTime} !`);
             } else {
                 PopUp.style.display = "block";   
             }
         };
+
 
         // Fermer en cliquant sur la croix
         closeBtn.onclick = () => {
@@ -44,6 +63,7 @@
                     AffichageNote.textContent = "0 étoile sur 5"
 
                     localStorage.setItem('time', new Date().getTime())
+                    location.reload();
             }
             else{
                 alert("Veuillez renseignez toute les réponses au questionnaire")
