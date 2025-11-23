@@ -18,8 +18,8 @@
 
         // Ajout convertion minute -> heure + min
         function formatMinutes(mins) {
-            const hours = Math.floor(mins / 60);
-            const minutes = mins % 60;
+            const hours = Math.floor(mins / 60); // Permet l'arrondit à l'entier inférieur
+            const minutes = mins % 60; // Permet d'afficher le nombre de minitute restante (retrait des heures)
 
             if (hours > 0 && minutes > 0) {
                 return `${hours}h${minutes}`;
@@ -34,7 +34,6 @@
         // Quand le bouton est cliqué définir PopUp comme visible
         openBtn.onclick = () => {
             let diftime = 120 - ((new Date().getTime() - parseFloat(timer)) / 60000);
-
             const formattedTime = formatMinutes(Math.floor(diftime));
 
             if (diftime < 120) {
