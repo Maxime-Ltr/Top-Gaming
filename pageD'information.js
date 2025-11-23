@@ -97,7 +97,6 @@ async function searchGames(query) {
     loading.style.display = "none";
 }
 
-
 // Événement Enter sur l'input
 searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
