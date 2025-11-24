@@ -81,7 +81,7 @@ body {
 /* LISTE DE CHAQUE JEU */
 .liste-jeux {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* ✅ 2 per row */
+    grid-template-columns: repeat(2, 1fr); /* 2 chaque row */
     gap: 40px;
     width: 95%;
     margin: auto;
@@ -89,11 +89,12 @@ body {
 
 /* Chaque Jeu */
 .jeu {
-    padding: 25px;
+    padding: 25px; /*Saut de ligne (espacement)*/
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
     font-family: Quicksand;
     font-size: 20px;
     font-weight: Semibold;

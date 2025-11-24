@@ -12,7 +12,7 @@ app.use(cors());
 // Route pour récupérer les infos d'un jeu Steam
 app.get("/game/:appId", async (req, res) => {
     const appId = req.params.appId;
-    const steamURL = `https://store.steampowered.com/api/appdetails?appids=${appId}&l=french`; // API
+    const steamURL = `https://store.steampowered.com/api/appdetails?appids=${appId}&l=french`; // STEAM API
 
     try {
         const response = await fetch(steamURL);
@@ -27,7 +27,7 @@ app.get("/game/:appId", async (req, res) => {
 // Route pour rechercher des jeux
 app.get("/search/:query", async (req, res) => {
     const query = req.params.query;
-    const steamSearchURL = `https://store.steampowered.com/api/storesearch/?term=${encodeURIComponent(query)}&l=french&cc=FR`;
+    const steamSearchURL = `https://store.steampowered.com/api/storesearch/?term=${encodeURIComponent(query)}&l=french&cc=FR`; // STEAM API
 
     try {
         const response = await fetch(steamSearchURL);
