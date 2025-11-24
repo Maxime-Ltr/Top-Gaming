@@ -36,6 +36,13 @@ body {
     border-radius: 20px;       /* Coins arrondis */
     padding: 10px 12px;        /* Espacement interne */
 }
+/* video responsive */
+video.bb_img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
 .description {
     width: 950px;
     width: 90%;

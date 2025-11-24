@@ -4,7 +4,7 @@ const gameList = document.getElementById("game-list");
 const loading = document.getElementById("loading");
 
 // Jeux par défaut les 4 Jeux
-const defaultGames = [730, 271590, 1091500, 1245620];
+const defaultGames = [730, 	570, 578080, 1808500];
 
 // Récupérer les infos d'un jeu
 async function fetchGame(appId) {
