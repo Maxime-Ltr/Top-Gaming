@@ -1,6 +1,7 @@
+// Récupération de l’ID du jeu dans l’URL
 const params = new URLSearchParams(window.location.search);
         const appId = params.get("appId");
-
+        //  Sélection des éléments HTML
         const titleEl = document.querySelector(".top h1");
         const descEl = document.getElementById("game-description");
         const imgEl = document.getElementById("game-image");
@@ -17,7 +18,8 @@ const params = new URLSearchParams(window.location.search);
             .then(data => {
                 const game = data[appId]?.data;
                 if (!game) throw new Error("Jeu introuvable");
-
+                
+                // Affichage dans le HTML
                 titleEl.innerText = game.name;
                 descEl.innerHTML = game.detailed_description;
                 imgEl.src = game.header_image;

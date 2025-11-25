@@ -10,6 +10,7 @@ body {
 .top h1 {
   font-family: Changa One; /* police */
   font-style: regular; /* style de police */
+  font-weight: 100;
   font-size: 64px; /* taille de police */
   text-align: center;
   color: white; /* la coleur */

@@ -44,16 +44,15 @@ video.bb_img {
     display: block;
 }
 .description {
-    width: 950px;
     width: 90%;
     max-width: 950px;
-    margin: 10px auto 0 auto; /* centers the whole block */
+    margin: 10px auto 0 auto; /* centre*/
     text-align: left;
     color: #86EFAC;
     background: transparent !important;
 
     font-family: Quicksand;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: Semibold
 }
 /*Footer*/
