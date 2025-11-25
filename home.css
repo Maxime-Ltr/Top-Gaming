@@ -130,7 +130,24 @@
                 text-align: left; /*Centre le texte*/
                 width: 80%; /*Permet de définir la taille max sur écrant*/
         }
-        
+
+        /*Information du jeu*/
+            /*Permet la transition*/
+            .InformationJeu {
+                transition: opacity 0.5s ease;
+                opacity: 1;
+            }
+
+            /*Pemet l'effet de disparition*/
+            .InformationJeu.fade-out {
+                opacity: 0;
+            }
+
+            /*Permet l'effet d'apparition*/
+            .InformationJeu.fade-in {
+                opacity: 1;
+        }
+
         /*Image jeu*/
             .GameImage{
                 display: block;

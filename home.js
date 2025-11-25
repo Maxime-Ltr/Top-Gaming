@@ -83,4 +83,75 @@
                 let NoteUser = slider.value / 2; // calcule sur 5
 
                 AffichageNote.textContent = NoteUser + " étoile" + (NoteUser > 1 ? "s" : "") + " sur 5"; // Ajout du s si >1 étoile
+});
+
+// Utilisation API pour changer les information. 
+    // Définition des "chemin d'accès" permettant de mettre à jour les information
+        const container = document.querySelector(".InformationJeu");
+        const imageEl = document.querySelector(".GameImage");
+        const titleEl = document.querySelector(".NomJeu");
+        const descEl = document.querySelector(".DescriptionJeu");
+
+    // Défition des vériable permettant le changement de jeu
+        let games = [];
+        let currentIndex = 0;
+
+    // Implémentation de l'animation de disparition
+        function fadeOut() {
+            return new Promise(resolve => {
+                container.classList.add("fade-out"); // Ajout de la classe fade-out permettant la mise ne page css
+                setTimeout(resolve, 500);
             });
+    }
+
+    // Implémentation de l'animation d'apparition
+        function fadeIn() {
+            container.classList.remove("fade-out"); // Retrait de la classe fade-out permettant la mise ne page css
+            container.classList.add("fade-in"); // Ajout de la classe fade-in permettant la mise ne page css
+            setTimeout(() => container.classList.remove("fade-in"), 500);
+    }
+
+    // Implémentation de l'affichange du jeu
+        function displayGame(index) {
+            const game = games[index];
+
+            imageEl.src = game.header_image;
+            titleEl.textContent = game.name;
+            descEl.innerHTML = `<b><u>Description :</u></b> ${game.short_description}`;
+    }
+
+    // Charge les 3 jeux les plus joués
+        async function loadGames() {
+            try {
+                const res = await fetch("http://localhost:3000/topplayed");
+                const topPlayed = await res.json(); 
+
+                // Récupération des information à l'aide de l'API
+                for (const game of topPlayed) {
+                    const detailRes = await fetch(`http://localhost:3000/game/${game.appid}`);
+                    const detailData = await detailRes.json();
+                    const appData = detailData[game.appid].data;
+
+                    games.push({
+                        name: appData.name,
+                        header_image: appData.header_image,
+                        short_description: appData.short_description
+                    });
+                }
+
+                displayGame(0);
+
+                // Changement automatique toutes les 30 sec
+                setInterval(async () => {
+                    await fadeOut();
+                    currentIndex = (currentIndex + 1) % games.length;
+                    displayGame(currentIndex);
+                    fadeIn();
+                }, 30000);
+
+            } catch (error) {
+                console.error("Erreur :", error);
+            }
+        }
+
+        loadGames();

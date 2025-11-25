@@ -24,7 +24,7 @@ app.get("/game/:appId", async (req, res) => {
     }
 });
 
-// Route pour rechercher des jeux
+// Route de l'API pour ouverture du steam shop
 app.get("/search/:query", async (req, res) => {
     const query = req.params.query;
     const steamSearchURL = `https://store.steampowered.com/api/storesearch/?term=${encodeURIComponent(query)}&l=french&cc=FR`; // STEAM API
@@ -42,3 +42,30 @@ app.get("/search/:query", async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
+// Route de l'API top 3 jeu
+app.get("/topplayed", async (req, res) => {
+    const url = "https://api.steampowered.com/ISteamChartsService/GetGamesByConcurrentPlayers/v1/";
+
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+
+        // API peut renvoyer "ranks" ou "games", on gère les deux
+        const list = json.response.ranks || json.response.games || [];
+
+        if (!Array.isArray(list) || list.length === 0) {
+            return res.status(500).json({ error: "Aucun jeu trouvé dans l’API Steam." });
+        }
+
+        // On prend les 3 premiers
+        const top3 = list.slice(0, 3);
+
+        res.json(top3);
+
+    } catch (error) {
+        console.error("Erreur API topplayed :", error);
+        res.status(500).json({ error: "Impossible de récupérer les jeux les plus joués." });
+    }
+});
+
