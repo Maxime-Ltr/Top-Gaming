@@ -87,10 +87,10 @@
 
 // Utilisation API pour changer les information. 
     // Définition des "chemin d'accès" permettant de mettre à jour les information
-        const container = document.querySelector(".InformationJeu");
-        const imageEl = document.querySelector(".GameImage");
-        const titleEl = document.querySelector(".NomJeu");
-        const descEl = document.querySelector(".DescriptionJeu");
+        const DivJeu = document.querySelector(".InformationJeu");
+        const GameImage = document.querySelector(".GameImage");
+        const TitreJeu = document.querySelector(".NomJeu");
+        const GameDescription = document.querySelector(".DescriptionJeu");
 
     // Défition des vériable permettant le changement de jeu
         let games = [];
@@ -99,39 +99,40 @@
     // Implémentation de l'animation de disparition
         function fadeOut() {
             return new Promise(resolve => {
-                container.classList.add("fade-out"); // Ajout de la classe fade-out permettant la mise ne page css
+                DivJeu.classList.add("fade-out"); // Ajout de la classe fade-out permettant la mise ne page css
                 setTimeout(resolve, 500);
             });
     }
 
     // Implémentation de l'animation d'apparition
         function fadeIn() {
-            container.classList.remove("fade-out"); // Retrait de la classe fade-out permettant la mise ne page css
-            container.classList.add("fade-in"); // Ajout de la classe fade-in permettant la mise ne page css
-            setTimeout(() => container.classList.remove("fade-in"), 500);
+            DivJeu.classList.remove("fade-out"); // Retrait de la classe fade-out permettant la mise ne page css
+            DivJeu.classList.add("fade-in"); // Ajout de la classe fade-in permettant la mise ne page css
+            setTimeout(() => DivJeu.classList.remove("fade-in"), 500);
     }
 
     // Implémentation de l'affichange du jeu
         function displayGame(index) {
             const game = games[index];
 
-            imageEl.src = game.header_image;
-            titleEl.textContent = game.name;
-            descEl.innerHTML = `<b><u>Description :</u></b> ${game.short_description}`;
+            GameImage.src = game.header_image;
+            TitreJeu.textContent = game.name;
+            GameDescription.innerHTML = `<b><u>Description :</u></b> ${game.short_description}`;
     }
 
     // Charge les 3 jeux les plus joués
-        async function loadGames() {
-            try {
-                const res = await fetch("http://localhost:3000/topplayed");
-                const topPlayed = await res.json(); 
+        async function loadGames() { // Fonction asyncrhone (utiliser await)
+            try { // Permet de voir les erreurs
+                const res = await fetch("http://localhost:3000/topplayed"); // Définit l'URL HTTP et d'attendre que la comunication réseau soit fini
+                const topPlayed = await res.json(); // Permet de transformer la réponse HTTP en un objet js.
 
                 // Récupération des information à l'aide de l'API
-                for (const game of topPlayed) {
-                    const detailRes = await fetch(`http://localhost:3000/game/${game.appid}`);
-                    const detailData = await detailRes.json();
-                    const appData = detailData[game.appid].data;
+                for (const game of topPlayed) { // Boucle permetant de mettre à jour la variable selon les jeu les plus jouer
+                    const detailRes = await fetch(`http://localhost:3000/game/${game.appid}`); // Récupération et définition de la variable pour obtenir la description du jeu
+                    const detailData = await detailRes.json(); // Transformation de la variable en objet js. 
+                    const appData = detailData[game.appid].data; // Récupération des donnée brut de l'API afin d'avoir les vrai infos
 
+                    // Récupération et modification des donnée du jeu dans le tableau GAME
                     games.push({
                         name: appData.name,
                         header_image: appData.header_image,
@@ -139,19 +140,20 @@
                     });
                 }
 
+                // Permet d'afficher le jeu dans le tableau game ayant l'index 0
                 displayGame(0);
 
                 // Changement automatique toutes les 30 sec
-                setInterval(async () => {
-                    await fadeOut();
-                    currentIndex = (currentIndex + 1) % games.length;
-                    displayGame(currentIndex);
-                    fadeIn();
-                }, 30000);
+                setInterval(async () => { // Exécute une commande tout les 30000 ms
+                    await fadeOut(); // Utilisation de la fonction fade-out
+                    currentIndex = (currentIndex + 1) % games.length; // Permet de changer de jeu (Ajouter 1 a chaque fois) et réinitialisé la variable lorsque l'on a atteint la fin
+                    displayGame(currentIndex); // Affiche le jeu
+                    fadeIn(); // Utilisation de la fonction fade-in
+                }, 30000); // Atteintre 30000 ms
 
             } catch (error) {
-                console.error("Erreur :", error);
+                console.error("Erreur :", error); // En cas d'erreur écrire "Erreur" dans la console
             }
         }
 
-        loadGames();
+        loadGames(); // Utilisation de la fonction
