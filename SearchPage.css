@@ -1,0 +1,289 @@
+body {
+    margin: 0;
+    background: #065F46;
+}
+/* header */
+.top {
+        background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
+        padding-bottom: 50px;/*Saut de ligne (espacement)*/
+}
+.top h1 {
+  font-family: Changa One; /* police */
+  font-style: regular; /* style de police */
+  font-size: 64px; /* taille de police */
+  text-align: center;
+  color: white; /* la coleur */
+}
+/*Barre de recherche*/
+        /*Paramétrage division barre de recherche*/
+            .search-box {
+            position: relative; /*Permet superposition (Affecte pas autre élèment)*/
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 20%; 
+        }
+
+        /*Initiation texte saisie*/
+            .game-search-bar {
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            display: block;
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 100%;
+            text-align: center;
+            color: #D1FAE5;
+    
+            background-color: #065F46;
+            border-radius: 99999px;
+            border-color:#D1FAE5;
+            border-style:solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        /*Initiation texte dépard*/
+            .game-search-bar::placeholder { 
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            color: #D1FAE5;
+        }
+
+        /*Parametrage icon loupe*/
+        .search-icon {
+            position: absolute; /*Permet superposition (Affecte les autre élèment)*/
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+
+        /*Retrait croix (clear recherche)*/
+            /* Chrome, Edge, Safari */
+                input[type="search"]::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            /* Firefox */
+                input[type="search"]::-moz-search-clear {
+                display: none;
+}
+/*Body*/
+    /*Permet la couleur du body*/
+        #middle{
+            background-color: #112A0F;
+            padding-bottom: 50px;/*Saut de ligne (espacement)*/
+             }
+            
+/* LISTE DE CHAQUE JEU */
+.liste-jeux {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 chaque row */
+    gap: 40px;
+    width: 95%;
+    margin: auto;
+}
+
+/* Chaque Jeu */
+.jeu {
+    padding: 25px; /*Saut de ligne (espacement)*/
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: Semibold;
+}
+
+/* Image identical to picture 2 */
+.jeu img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.jeu img:hover {
+    transform: scale(1.10) rotate(0deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+/* Title style */
+.jeu h2 {
+    font-family: "Changa One";
+    font-size: 28px;
+    font-weight: normal;
+    color: #86EFAC;
+    margin: 0;
+}
+
+/* Description style */
+.jeu p {
+    font-family: "Exo 2";
+    font-size: 20px;
+    color: #86EFAC;
+    text-align: justify;
+    margin: 0;
+}
+/* Lien qui englobe la carte */
+.jeu-link {
+    text-decoration: none; /* retire le soulignement */
+    color: inherit;        /* garde la couleur du texte */
+    display: block;
+}
+/* Link style */
+.decor {
+    color: #86EFAC;
+    text-decoration: none;
+}
+
+/*Footer*/
+    /*Fond du footer*/
+    .footer{
+        background : linear-gradient(#112A0F, #065F46, #065F46);
+        padding-top: 80px;
+        height: 100%;
+    }
+    /*Mise en forme global des LINK*/
+    .lien{
+        display: flex; /*Définie comment agit les éléments*/
+        justify-content: space-evenly;
+        margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+        text-align:center; /*Centre le texte*/
+    }
+
+    /*Mise en forme de chaque LINK*/
+    .Link{
+        font-family: "Exo 2";
+        color: #D1FAE5;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        transform: all 300ms;
+        padding-bottom: 30px;
+
+        animation: all 300ms;
+    }
+     /*Sytle des lien en survole*/
+    .Link:hover{
+        text-shadow: 0 0 5px #b2fcd6;
+        color: #D1FAE5;
+    }
+
+    /*Sytle des lien en survole*/
+    .Link:active{
+        color: #61c893;
+        transform: translateY(1px);
+    }
+
+    /*Style général des logos*/
+    .imageLien{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*Style spécific des logos*/
+    .LogoGit{
+        width: 50px;
+    }
+
+    .LogoFigma{
+        width: 40px ;
+        height: 50px;
+    }
+    .LogoAgora{
+        width: 70px;
+        
+    }
+
+    /*Style logo survol*/
+    .IconFooter:active{
+        transform: translateY(1px);
+        }
+/* Code Responsive pour Navigateur */
+@media (max-width: 1024px) {
+
+    .top h1 {
+        font-size: 48px;
+    }
+
+    .search-box {
+        width: 40%;
+    }
+
+    .jeu img {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .jeu p {
+        font-size: 20px;
+    }
+
+    .imageLien {
+        width: 90%;
+    }
+}
+
+/* Code responsive pour PHONE */
+@media (max-width: 600px) {
+
+    .top h1 {
+        font-size: 36px;
+    }
+
+    .search-box {
+        width: 70%;
+    }
+
+    .liste-jeux {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .jeu {
+        padding: 0.5rem;
+    }
+
+    .jeu img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .jeu h2 {
+        font-size: 20px;
+    }
+
+    .jeu p {
+        font-size: 16px;
+    }
+
+    .lien {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .imageLien {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .LogoGit, .LogoFigma, .LogoAgora {
+        width: 45px;
+    }
+}
+#loading {
+    display: none; 
+    text-align:center; 
+    color:#86EFAC; 
+    font-size:20px;
+}

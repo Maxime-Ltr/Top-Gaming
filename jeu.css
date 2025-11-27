@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  background: #065F46;
+  overflow-x: hidden; /* Empêche tout débordement horizontal */
+}
+.top {
+        background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
+        padding-bottom: 20px;/*Saut de ligne (espacement)*/
+}
+.top h1 {
+  font-family: Changa One; /* police */
+  font-weight: bold; /* style de police */
+  font-size: clamp(2rem, 5vw, 4rem); /* taille de police */
+  text-align: center;
+  color: white; /* la coleur */
+  margin-top: 20px;       /* petit espace au-dessus si tu veux */
+  margin-bottom: 20px;    /* espace propre sous le titre */
+}
+.middle {
+    background-color: #112A0F;
+    padding-bottom: 50px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: flex-start; 
+}
+/* Règles pour rendre l'image de la section middle responsive */
+.middle img {
+    width: 100% !important;   /* L'image prend toute la largeur du conteneur */
+    max-width: 950px;          /* Limite maximale pour grands écrans */
+    height: auto;              /* Conserve les proportions */
+    display: block;            /* Supprime les espaces indésirables */
+    margin: 0 auto;            /* Centre l'image horizontalement */
+    border-radius: 20px;       /* Coins arrondis */
+    padding: 10px 12px;        /* Espacement interne */
+}
+/* video responsive */
+video.bb_img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+.description {
+    width: 950px;
+    width: 90%;
+    max-width: 950px;
+    margin: 10px auto 0 auto; /* centers the whole block */
+    text-align: left;
+    color: #86EFAC;
+    background: transparent !important;
+
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: Semibold
+}
+/*Footer*/
+    /*Fond du footer*/
+    .footer{
+        background : linear-gradient(#112A0F, #065F46, #065F46);
+        padding-top: 80px;
+    }
+    /*Mise en forme global des LINK*/
+    .lien{
+        display: flex; /*Définie comment agit les éléments*/
+        justify-content: space-evenly;
+        margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+        text-align:center; /*Centre le texte*/
+        flex-wrap: wrap;
+    }
+
+    /*Mise en forme de chaque LINK*/
+    .Link{
+        font-family: "Exo 2";
+        color: #D1FAE5;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        transform: all 300ms;
+        padding-bottom: 30px;
+
+        animation: all 300ms;
+    }
+     /*Sytle des lien en survole*/
+    .Link:hover{
+        text-shadow: 0 0 5px #b2fcd6;
+        color: #D1FAE5;
+    }
+
+    /*Sytle des lien en survole*/
+    .Link:active{
+        color: #61c893;
+        transform: translateY(1px);
+    }
+
+    /*Style général des logos*/
+    .imageLien{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*Style spécific des logos*/
+    .LogoGit{
+        width: 50px;
+    }
+
+    .LogoFigma{
+        width: 40px ;
+        height: 50px;
+    }
+    .LogoAgora{
+        width: 70px;
+        
+    }
+
+    /*Style logo survol*/
+    .IconFooter:active{
+        transform: translateY(1px);
+        }
+/* --- Code Responsive IPAD --- */
+@media (max-width: 1024px) {
+    .top h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .middle img {
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+
+    .imageLien {
+        width: 90%;
+    }
+}
+
+/* --- Phone --- */
+@media (max-width: 600px) {
+    .top h1 {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+
+    .middle {
+        padding-bottom: 20px;
+    }
+
+    .middle img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .lien {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .imageLien {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .LogoGit, .LogoFigma, .LogoAgora {
+        width: 45px;
+    }
+}

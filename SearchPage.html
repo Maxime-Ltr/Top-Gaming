@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP GAMING</title>
+
+    <!-- css -->
+
+    <link rel="stylesheet" type="text/css" href="SearchPage.css">
+
+    <!-- polices -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+     <div class="top">
+        <!-- Nom site (Page Home)-->
+            <!-- Saut de ligne-->
+                <br>
+                <br>
+            <h1>Top Steam Gaming</h1>
+        <!-- Barre de recherche (Page Home)-->
+            <div class="search-box">
+                <input type="search" id="game-search" name="Chercher un jeu vidéo" placeholder="Trouver un jeu..." class="game-search-bar"/>
+                <!-- placeholder permet texte initial-->
+                <!-- class permet identification pour css-->
+                <img src="img/Loupe.png" alt="Recherche" class="search-icon">
+                </div>
+    </div>
+
+  <!-- Section du milieu où les cartes de jeux seront affichées -->
+  <div id="middle">
+  <div id="loading">
+    🔄 Chargement de jeux...
+  </div>
+  <div class="liste-jeux" id="game-list">
+    <!-- Les cartes des jeux seront ajoutées ici par le JS -->
+  </div>
+</div>
+
+   <div class="footer">
+
+        <!-- Ajout texte lien-->
+        <div class="lien">
+        <a href="legalMention.html" class="Link" class="mentionLegal">Mention Légal</a>
+        <a href="https://steamcommunity.com/dev?l=french" class="Link" class="APIUse">Steam API</a>
+        </div>
+
+        <!-- Ajout image lien-->
+         <div class="imageLien">
+            <a href="https://github.com/Maxime-Ltr/Top-Gaming/commits/home-page/"><img class="LogoGit IconFooter" src="https://i.goopics.net/c8g1mg.png"></a>
+            <a href="https://www.figma.com/site/j1Zu6oRZQ7zdoYrUrBbfU9/TOP-Gaming?node-id=0-1&t=opI0Ek3x3rGUyA3d-1"><img class="LogoFigma IconFooter" src="https://i.goopics.net/3ys5st.png"></a>
+            <a href="https://lyc-agora-puteaux.ac-versailles.fr/"><img class="LogoAgora IconFooter" src="https://i.goopics.net/lqfa6y.png"></a>
+         </div>
+    </div>
+    <script src="SearchPage.js"></script>
+</body>
+</html>
