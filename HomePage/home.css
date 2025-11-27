@@ -182,6 +182,7 @@
                 margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
                 text-align: left; /*Centre le texte*/
                 width: 80%; /*Permet de définir la taille max sur écrant*/
+                cursor: pointer;
         }
         
         /*Description du jeu*/

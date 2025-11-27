@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
-        const appId = params.get("appId");
-
+        const appId = params.get("id") || params.get("appId"); // Récupère id OU appId
+        
         const titleEl = document.querySelector(".top h1");
         const descEl = document.getElementById("game-description");
         const imgEl = document.getElementById("game-image");
