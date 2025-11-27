@@ -117,7 +117,6 @@
 
             GameImage.src = game.header_image;
             TitreJeu.textContent = game.name;
-            GameDescription.innerHTML = `<b><u>Description :</u></b> ${game.short_description}`;
     }
 
     // Charge les 3 jeux les plus joués
@@ -136,7 +135,6 @@
                     games.push({
                         name: appData.name,
                         header_image: appData.header_image,
-                        short_description: appData.short_description
                     });
                 }
 
@@ -149,7 +147,7 @@
                     currentIndex = (currentIndex + 1) % games.length; // Permet de changer de jeu (Ajouter 1 a chaque fois) et réinitialisé la variable lorsque l'on a atteint la fin
                     displayGame(currentIndex); // Affiche le jeu
                     fadeIn(); // Utilisation de la fonction fade-in
-                }, 30000); // Atteintre 30000 ms
+                }, 10000); // Atteintre 10000 ms
 
             } catch (error) {
                 console.error("Erreur :", error); // En cas d'erreur écrire "Erreur" dans la console

@@ -120,9 +120,9 @@
     /*Top 3 jeu*/
         /*Titre TOP 3*/
             .TitreBody{
-                font-family: "Changa One"; /*Police d'écriture*/
-                font-size: 50px; 
-                font-weight: 300; /*Taille des traits de la lettre*/
+                font-family: "Quicksand"; /*Police d'écriture*/
+                font-size: 25px; 
+                font-weight: regular; /*Taille des traits de la lettre*/
                 color: #FFFFFF;
                 padding: 15px;
                 display: block; /*Définie comment agit les éléments*/
