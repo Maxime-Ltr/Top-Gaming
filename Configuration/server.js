@@ -69,3 +69,20 @@ app.get("/topplayed", async (req, res) => {
     }
 });
 
+// API pour les 50 jeux
+app.get("/top-games", async (req, res) => {
+    const steamSearchURL = `https://store.steampowered.com/api/storesearch/?term=&l=french&cc=FR`;
+
+    try {
+        const response = await fetch(steamSearchURL);
+        const data = await response.json();
+
+        // On renvoie juste les 50 premiers jeux
+        const top50 = data.items.slice(0, 50).map(game => game.id);
+
+        res.json(top50);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erreur lors de la récupération des jeux populaires." });
+    }
+});

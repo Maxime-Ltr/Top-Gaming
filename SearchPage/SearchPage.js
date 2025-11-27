@@ -119,13 +119,19 @@ loadDefaultGames();
         searchGames(query);
 }
 
-let defaultGames = []
+let defaultGames = [];
 
-// Jeux par défaut les 4 Jeux
-    if(!searchInput.value){
-        defaultGames = [730, 570, 578080, 1808500];
-        loadDefaultGames();
-    }
-    else{
-        defaultGames = []
-    }
+// Si la barre de recherche est vide → charger 50 jeux dynamiques
+if (!searchInput.value) {
+
+    fetch("http://localhost:3000/top-games")
+        .then(res => res.json())
+        .then(data => {
+            defaultGames = data; // Contient 50 appIDs
+            loadDefaultGames();  // Tu appelles déjà cette fonction
+        })
+        .catch(err => console.error("Erreur de chargement des jeux :", err));
+}
+else{
+    defaultGames = [];
+}
