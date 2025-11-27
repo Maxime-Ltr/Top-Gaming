@@ -116,7 +116,7 @@
             const game = games[index];
 
             GameImage.src = game.header_image;
-            TitreJeu.textContent = game.name;
+            TitreJeu.textContent = `TOP ${currentIndex + 1} - ` + game.name;
     }
 
     // Charge les 3 jeux les plus joués
