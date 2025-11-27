@@ -2,6 +2,36 @@ body {
     margin: 0;
     background: #065F46;
 }
+.home {
+  font-family: "Exo 2";
+  font-size: 18px;
+  font-weight: Regular;
+  display: block;
+  margin: 20px; /*Taille automatique de l'élément (permet le centrage)*/
+  width: 5%;
+  text-align: center;
+  color: #D1FAE5;
+    
+  background-color: #065F46;
+  border-radius: 99999px;
+  border-color:#D1FAE5;
+  border-style:solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+
+  text-decoration: none;
+}
+.returnhome {
+    width: 20px !important;   /* L'image prend toute la largeur du conteneur */
+    max-width: 950px;          /* Limite maximale pour grands écrans */
+    height: auto;              /* Conserve les proportions */
+    display: block;            /* Supprime les espaces indésirables */
+    margin: auto;            /* Centre l'image horizontalement */
+    border-radius: 20px;       /* Coins arrondis */
+    padding: 10px 12px;        /* Espacement interne */
+
+}
 /* header */
 .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
@@ -9,7 +39,7 @@ body {
 }
 .top h1 {
   font-family: Changa One; /* police */
-  font-style: regular; /* style de police */
+  font-weight: 100; /* style de police */
   font-size: 64px; /* taille de police */
   text-align: center;
   color: white; /* la coleur */
