@@ -1,0 +1,524 @@
+/*HEAD*/
+    /*Retrait bordure blanche*/
+    body{
+        margin: 0px;
+    }
+
+    /*Permet dégrader head*/
+        .top {
+        background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
+        padding-bottom: 50px;/*Saut de ligne (espacement)*/
+        height: 100%;
+    }
+
+    /*Texte*/
+        /*Mise en forme titre*/
+            .NomSite {
+                font-family: "Changa One"; /*Police d'écriture*/
+                font-size: 90px; 
+                font-weight: 300; /*Taille des traits de la lettre*/
+                color: #FFFFFF;
+                padding: 15px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: center; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+        }        
+
+        /*Mise en forme Sous-Titre*/
+            .SousTitrePresentation {
+                font-family: "Quicksand"; /*Police d'écriture*/
+                font-size: 25px;
+                font-weight: Regular; /*Taille des traits de la lettre*/
+                color: #D1FAE5;
+                padding: 5px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: center; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+        }
+
+        /*Mise en forme description*/
+            .DescriptionPresentation {
+                font-family: "Exo 2";
+                font-size: 18px;
+                font-weight: 400;
+                color: #D1FAE5;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: center; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+    }
+        
+    /*Barre de recherche*/
+        /*Paramétrage division barre de recherche*/
+            .search-box {
+            position: relative; /*Permet superposition (Affecte pas autre élèment)*/
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 50%; 
+        }
+
+        /*Initiation texte saisie*/
+            .game-search-bar {
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            display: block;
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 100%;
+            text-align: center;
+            color: #D1FAE5;
+    
+            background-color: #065F46;
+            border-radius: 99999px;
+            border-color:#D1FAE5;
+            border-style:solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 35px;
+        }
+
+        /*Initiation texte dépard*/
+            .game-search-bar::placeholder { 
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            color: #D1FAE5;
+        }
+
+        /*Parametrage icon loupe*/
+        .search-icon {
+            position: absolute; /*Permet superposition (Affecte les autre élèment)*/
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+
+        /*Retrait croix (clear recherche)*/
+            /* Chrome, Edge, Safari */
+                input[type="search"]::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            /* Firefox */
+                input[type="search"]::-moz-search-clear {
+                display: none;
+}
+
+/*Body*/
+    /*Permet la couleur du body*/
+        #middle{
+            background-color: #112A0F;
+            padding-bottom: 50px;/*Saut de ligne (espacement)*/
+            height: 100%;
+    }
+    
+    /*Top 3 jeu*/
+        /*Titre TOP 3*/
+            .TitreBody{
+                font-family: "Changa One"; /*Police d'écriture*/
+                font-size: 50px; 
+                font-weight: 300; /*Taille des traits de la lettre*/
+                color: #FFFFFF;
+                padding: 15px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: left; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+        }
+
+        /*Information du jeu*/
+            /*Permet la transition*/
+            .InformationJeu {
+                transition: opacity 0.5s ease;
+                opacity: 1;
+            }
+
+            /*Pemet l'effet de disparition*/
+            .InformationJeu.fade-out {
+                opacity: 0;
+            }
+
+            /*Permet l'effet d'apparition*/
+            .InformationJeu.fade-in {
+                opacity: 1;
+        }
+
+        /*Image jeu*/
+            .GameImage{
+                display: block;
+                align-items: center;
+                margin: auto;
+                width: 70%;
+                border-radius: 20px;
+
+                border: 1px;
+                border-style: solid;
+                border-color: transparent;
+
+                animation-duration: 300ms; /*Durée de l'animation*/
+                transition: all 300ms; /*Durée transition*/
+            }
+
+            .GameImage:hover{
+                border: 1px;
+                border-color: #D1FAE5;
+                border-style: solid; 
+                box-shadow: 0 0 10px #D1FAE5; /*Ombre de la boite (x1 = décal droite, x2 = décal bas, x3 = adoucisement ombre*/
+            }    
+
+        /*Nom du jeu*/
+            .NomJeu{
+                font-family: "Quicksand"; /*Police d'écriture*/
+                font-size: 30px;
+                font-weight: Regular; /*Taille des traits de la lettre*/
+                color: #D1FAE5;
+                padding: 5px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: left; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+        }
+        
+        /*Description du jeu*/
+            .DescriptionJeu{
+                font-family: "Exo 2" !important;
+                font-size: 18px;
+                font-weight: Regular;
+                color: #D1FAE5;
+                padding: 10px;
+                padding-bottom: 60px;
+                display: block; /*Définie comment agit les éléments*/
+                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+                text-align: left; /*Centre le texte*/
+                width: 80%; /*Permet de définir la taille max sur écrant*/
+    }
+
+    /*Vote*/
+        /*Paramétrage division barre de recherche*/
+            .vote-box {
+            position: relative; /*Permet superposition (Affecte pas autre élèment)*/
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 30%; 
+        }
+
+        /*Initiation texte saisie*/
+            .VoteButton {
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            display: block;
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 100%;
+            text-align: center;
+            color: #D1FAE5;
+    
+            background-color: #065F46;
+            border-radius: 99999px;
+            border-color:#D1FAE5;
+            border-style:solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            animation-duration: 300ms;
+            transition: all 300ms;
+        }
+
+        /*Style bouton survoler*/
+        .VoteButton:hover {
+            border-style: solid;
+            border-color:#b2fcd6;
+            box-shadow: 0 0 10px #b2fcd6;
+
+            background-color: #057c5a;
+            color: #D1FAE5;
+        }        
+
+        /*Style bouton cliquer*/
+        .VoteButton:active {
+            transform: translate(0px,1px);
+            border-bottom: 1px;
+            border-style: solid;
+            border-color:#b2fcd6;
+
+            background-color: #057c5a;
+            color: #D1FAE5;
+        }
+
+        /*Parametrage icon loupe*/
+        .vote-icon {
+            position: absolute; /*Permet superposition (Affecte les autre élèment)*/
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+
+        /*Formatage Description vote*/
+        .VoteDescription{
+            font-family: "Quicksand"; /*Police d'écriture*/
+            font-size: 18px;
+            font-weight: Regular; /*Taille des traits de la lettre*/
+            color: #D1FAE5;
+            padding: 5px;
+            text-align: center;
+        }
+
+    /*Vote PopUp*/
+        /*Fond légèrement transparent*/
+            .PopUp {
+            position: fixed; /* Fixé, ne touche pas la page */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6,95,70, 0.5); /*Fond sombre*/
+            display: none; /*Ne pas afficher*/
+            justify-content: center;
+            align-items: center;
+            z-index: 999999; /* mise en avant (premier plan de tout) */
+        }
+
+        /*Contenu du pop-up*/
+            .PopUpContent{
+                background: #065F46;
+                border: #b2fcd6 3px;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                padding: 5px;
+                width: 40%;
+                border: 2px solid #D1FAE5;
+                border-radius: 20px;
+        }
+
+        /*Style du titre*/
+            .PopUpTitle{
+                font-family: "Changa One";
+                font-size: 30px;
+                font-weight: 100;
+                color: #FFFFFF;
+                
+                padding: 5px;
+                margin: auto;
+                display: block;
+                text-align: center;
+        }
+
+        /*Style description*/
+            .PopUpDescription{
+                font-family: "Quicksand";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                margin: auto;
+                display: block;
+                text-align: left;
+                padding-bottom: 20px;
+        }
+
+        /*Style des question*/
+            .PopUpInput{
+                font-family: "Quicksand";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                margin: auto;
+                display: block;
+                text-align: left;
+                padding-top: 15px;
+                padding-bottom: 3px;
+        }
+
+        /*Style des réponse utilisateur*/
+            .InputVote{
+                font-family: "Exo 2";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                background: #057c5a;
+                border: 2px solid #D1FAE5;
+                border-radius: 20px;
+                
+                margin: auto;
+                display: absolute;
+                text-align: left;
+                padding: 5px;
+                width: 50%;
+        }
+
+            .InputVote::placeholder{
+                font-family: "Exo 2";
+                font-size: 15px;
+                color: #D1FAE5;
+                text-align: left;
+            }    
+
+            .InputVote:hover{
+                border-style: solid;
+                border-color: #D1FAE5;
+                border-width: 2px;
+                box-shadow: 0 0 5px #D1FAE5;
+        }
+        /* Style général du slider */
+            .SliderVote {
+                appearance: none;   
+                -webkit-appearance: none;  /* retire le style par défaut (Chrome/Edge) */
+                width: 80%;
+                height: 8px;
+                background: #61c893;
+
+                border-radius: 20px;
+                border-color: #D1FAE5;
+                border-width: 2px;
+                border-style: solid;
+                
+                margin: auto;
+                display: flex;
+                justify-content: center;
+
+                transition: 0.3s;
+            }
+
+            /* Slider en survol */
+            .SliderVote:hover {
+                box-shadow: 0 0 5px #D1FAE5;
+            }
+
+            /* --- Thumb (le bouton rond) --- */
+            .SliderVote::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 20px;
+                height: 20px;
+                background: #61c893;
+
+                border-radius: 9999px;
+                border-width: 2px;
+                border-color: #065F46;
+                border-style: solid;
+
+                cursor: pointer;
+                transition: 0.2s;
+            }
+        
+        /*Bouton voter*/
+            .VotedGameDescription{
+                width: 97% !important;
+                height: 50px;
+            }
+
+            .VotePopUp{
+                font-family: "Exo 2";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                background: #057c5a;
+                border: 2px solid #D1FAE5;
+                border-radius: 20px;
+                
+                margin: auto;
+                display: block;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .VotePopUp:hover{
+                border: 2px solid #b2fcd6;
+                box-shadow: 0 0 5px #b2fcd6;
+            }
+
+            /*Bouton fermer*/
+            .close {
+                display: flex;
+                justify-content: end;
+                align-items: left;
+                margin: auto;
+                width: 5%;
+                border-radius: 20px;
+
+                border: 1px;
+                border-style: solid;
+                border-color: transparent;
+            }
+
+            .close:hover{
+                box-shadow: 0 0 5px #b2fcd6;
+}
+        
+
+/*Footer*/
+    /*Fond du footer*/
+    .footer{
+        background : linear-gradient(#112A0F, #065F46, #065F46);
+        padding-top: 80px;
+        height: 100%;
+    }
+
+    /*Mise en forme global des LINK*/
+    .lien{
+        display: flex; /*Définie comment agit les éléments*/
+        justify-content: space-evenly;
+        margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
+        text-align:center; /*Centre le texte*/
+    }
+
+    /*Mise en forme de chaque LINK*/
+    .Link{
+        font-family: "Exo 2";
+        color: #D1FAE5;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        transform: all 300ms;
+        padding-bottom: 30px;
+
+        animation: all 300ms;
+    }
+
+    /*Sytle des lien en survole*/
+    .Link:hover{
+        text-shadow: 0 0 5px #b2fcd6;
+        color: #D1FAE5;
+    }
+
+    /*Sytle des lien en survole*/
+    .Link:active{
+        color: #61c893;
+        transform: translateY(1px);
+    }
+
+    /*Style général des logos*/
+    .imageLien{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*Style spécific des logos*/
+    .LogoGit{
+        width: 50px;
+    }
+
+    .LogoFigma{
+        width: 40px ;
+        height: 50px;
+    }
+    .LogoAgora{
+        width: 70px;
+        transform: translateY(+50%);
+    }
+
+    /*Style logo survol*/
+    .IconFooter:active{
+        transform: translateY(1px);
+    }
