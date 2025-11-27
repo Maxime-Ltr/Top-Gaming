@@ -4,8 +4,8 @@ body {
   overflow-x: hidden; /* Empêche tout débordement horizontal */
 }
 .top {
-        background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
-        padding-bottom: 20px;/*Saut de ligne (espacement)*/
+    background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
+    padding-bottom: 20px;/*Saut de ligne (espacement)*/
 }
 .top h1 {
   font-family: Changa One; /* police */
@@ -57,71 +57,27 @@ video.bb_img {
     font-weight: Semibold
 }
 .Buttons {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    margin: 2%;
 }
 
-.button {
-  font-family: "Exo 2";
-  font-size: 18px;
-  font-weight: Regular;
-  display: block;
-  margin: 20px; /*Taille automatique de l'élément (permet le centrage)*/
-  width: 5%;
-  text-align: center;
-  color: #D1FAE5;
-    
-  background-color: #065F46;
-  border-radius: 99999px;
-  border-color:#D1FAE5;
-  border-style:solid;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: pointer;
-
-  text-decoration: none;
-}
-.imagebutton {
-    width: 20px !important;   /* L'image prend toute la largeur du conteneur */
-    max-width: 950px;          /* Limite maximale pour grands écrans */
-    height: auto;              /* Conserve les proportions */
-    display: block;            /* Supprime les espaces indésirables */
-    margin: auto;            /* Centre l'image horizontalement */
-    border-radius: 20px;       /* Coins arrondis */
-    padding: 10px 12px;        /* Espacement interne */
-
-}
 .home {
-  font-family: "Exo 2";
-  font-size: 18px;
-  font-weight: Regular;
-  display: block;
-  margin: 20px; /*Taille automatique de l'élément (permet le centrage)*/
-  width: 5%;
-  text-align: center;
-  color: #D1FAE5;
-    
-  background-color: #065F46;
-  border-radius: 99999px;
-  border-color:#D1FAE5;
-  border-style:solid;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: pointer;
-
-  text-decoration: none;
+    position: absolute;
+    width: 7%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-.returnhome {
-    width: 20px !important;   /* L'image prend toute la largeur du conteneur */
-    max-width: 950px;          /* Limite maximale pour grands écrans */
-    height: auto;              /* Conserve les proportions */
-    display: block;            /* Supprime les espaces indésirables */
-    margin: auto;            /* Centre l'image horizontalement */
-    border-radius: 20px;       /* Coins arrondis */
-    padding: 10px 12px;        /* Espacement interne */
 
+.return {
+    position: absolute;
+    width: 5.5%;
+    padding-left: 7%;
+    padding-top: 0.7%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
+
 /*Vote*/
         /*Paramétrage division barre de recherche*/
             .vote-box {
