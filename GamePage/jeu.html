@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="jeu.css">
+    <link rel="stylesheet" href="./jeu.css">
+
+    <!-- Intégration police-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
      <div class="top">
@@ -14,10 +20,49 @@
 
     <!-- Middle -->
     <div class="middle">
-        <img src="" alt="Image du jeu" id="game-image">
+        <img src="" alt="Image du jeu" id="game-image" class="game-image">
         <div class="description" id="game-description">
             <p>Les détails du jeu apparaîtront ici.</p>
         </div>
+
+        <!-- Vote-->
+            <div class="vote-box">
+                <!-- Intégration bouton-->
+                    <button class="VoteButton" id="OpenPopUp">Voter</button>
+                    <img src="https://i.goopics.net/sfbow8.png" class="vote-icon">
+            </div>
+        
+            <div id="PopUp" class="PopUp">
+                <!--Ajout fenêtre Pop-Up-->
+                <div class="PopUpContent">
+                    <!--Ajout des catégorie-->
+                        <h2 class="PopUpTitle">Vote</h2>
+                        <p class="PopUpDescription">Vote pour ton jeu préférer mais avant, renseigne nous quelque information.</p>
+                        
+                        <h3 class="PopUpInput">Votre pseudo</h3>
+                        <input type="text" id="PseudoUser" class="InputVote Pseudo" placeholder="Ex. StLm_SkyEyes_">
+                        
+                        <h3 class="PopUpInput">Légère description du jeu</h3>
+                        <input type="text" id="DescriptionGameVoted" class="InputVote VotedGameDescription" placeholder="Ex. Jolie jeu, pationnant...">
+
+                        <h3 class="PopUpInput">Dernier jour jouer</h3>
+                        <input type="date" id="DatePlay" class="InputVote DatePlay" min="2025-01-01" placeholder="Quand est-ce la dernier fois que vous y avais jouer ?">
+
+                        <h3 class="PopUpInput">Note sur 5</h3>
+                        <input type="range" id="Note" class="SliderVote" min="0" max="10" value="0">
+                        <p class="PopUpInput Note" id="NoteUser">0 étoile sur 5</p>
+                        <br>
+
+                        <button id="SoumettreVote" class="VotePopUp">Soumettre mon vote</button>
+
+                    <!--Ajout croix pour fermer-->
+                        <br>
+                        <input type="image" id="closePopup" class="close" src="https://i.goopics.net/49z18s.png">
+                    
+                        <script src="./home.js"></script>
+
+                </div>
+            </div>
     </div>
      
      <div class="footer">

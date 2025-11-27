@@ -27,7 +27,7 @@ body {
     justify-content: flex-start; 
 }
 /* Règles pour rendre l'image de la section middle responsive */
-.middle img {
+.game-image {
     width: 100% !important;   /* L'image prend toute la largeur du conteneur */
     max-width: 950px;          /* Limite maximale pour grands écrans */
     height: auto;              /* Conserve les proportions */
@@ -55,6 +55,252 @@ video.bb_img {
     font-family: Quicksand;
     font-size: 20px;
     font-weight: Semibold
+}
+
+/*Vote*/
+        /*Paramétrage division barre de recherche*/
+            .vote-box {
+            position: relative; /*Permet superposition (Affecte pas autre élèment)*/
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 30%; 
+        }
+
+        /*Initiation texte saisie*/
+            .VoteButton {
+            font-family: "Exo 2";
+            font-size: 18px;
+            font-weight: Regular;
+            display: block;
+            margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
+            width: 100%;
+            text-align: center;
+            color: #D1FAE5;
+    
+            background-color: #065F46;
+            border-radius: 99999px;
+            border-color:#D1FAE5;
+            border-style:solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            animation-duration: 300ms;
+            transition: all 300ms;
+        }
+
+        /*Style bouton survoler*/
+        .VoteButton:hover {
+            border-style: solid;
+            border-color:#b2fcd6;
+            box-shadow: 0 0 10px #b2fcd6;
+
+            background-color: #057c5a;
+            color: #D1FAE5;
+        }        
+
+        /*Style bouton cliquer*/
+        .VoteButton:active {
+            transform: translate(0px,1px);
+            border-bottom: 1px;
+            border-style: solid;
+            border-color:#b2fcd6;
+
+            background-color: #057c5a;
+            color: #D1FAE5;
+        }
+
+        /*Parametrage icon loupe*/
+        .vote-icon {
+            position: absolute !important; /*Permet superposition (Affecte les autre élèment)*/
+            right: 15px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            width: 24px !important;
+            height: 24px !important;
+            pointer-events: none !important;
+        }
+
+    /*Vote PopUp*/
+        /*Fond légèrement transparent*/
+            .PopUp {
+            position: fixed; /* Fixé, ne touche pas la page */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6,95,70, 0.5); /*Fond sombre*/
+            display: none; /*Ne pas afficher*/
+            justify-content: center;
+            align-items: center;
+            z-index: 999999; /* mise en avant (premier plan de tout) */
+        }
+
+        /*Contenu du pop-up*/
+            .PopUpContent{
+                background: #065F46;
+                border: #b2fcd6 3px;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                padding: 5px;
+                width: 40%;
+                border: 2px solid #D1FAE5;
+                border-radius: 20px;
+        }
+
+        /*Style du titre*/
+            .PopUpTitle{
+                font-family: "Changa One";
+                font-size: 30px;
+                font-weight: 100;
+                color: #FFFFFF;
+                
+                padding: 5px;
+                margin: auto;
+                display: block;
+                text-align: center;
+        }
+
+        /*Style description*/
+            .PopUpDescription{
+                font-family: "Quicksand";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                margin: auto;
+                display: block;
+                text-align: left;
+                padding-bottom: 20px;
+        }
+
+        /*Style des question*/
+            .PopUpInput{
+                font-family: "Quicksand";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                margin: auto;
+                display: block;
+                text-align: left;
+                padding-top: 15px;
+                padding-bottom: 3px;
+        }
+
+        /*Style des réponse utilisateur*/
+            .InputVote{
+                font-family: "Exo 2";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                background: #057c5a;
+                border: 2px solid #D1FAE5;
+                border-radius: 20px;
+                
+                margin: auto;
+                display: absolute;
+                text-align: left;
+                padding: 5px;
+                width: 50%;
+        }
+
+            .InputVote::placeholder{
+                font-family: "Exo 2";
+                font-size: 15px;
+                color: #D1FAE5;
+                text-align: left;
+            }    
+
+            .InputVote:hover{
+                border-style: solid;
+                border-color: #D1FAE5;
+                border-width: 2px;
+                box-shadow: 0 0 5px #D1FAE5;
+        }
+        /* Style général du slider */
+            .SliderVote {
+                appearance: none;   
+                -webkit-appearance: none;  /* retire le style par défaut (Chrome/Edge) */
+                width: 80%;
+                height: 8px;
+                background: #61c893;
+
+                border-radius: 20px;
+                border-color: #D1FAE5;
+                border-width: 2px;
+                border-style: solid;
+                
+                margin: auto;
+                display: flex;
+                justify-content: center;
+
+                transition: 0.3s;
+            }
+
+            /* Slider en survol */
+            .SliderVote:hover {
+                box-shadow: 0 0 5px #D1FAE5;
+            }
+
+            /* --- Thumb (le bouton rond) --- */
+            .SliderVote::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 20px;
+                height: 20px;
+                background: #61c893;
+
+                border-radius: 9999px;
+                border-width: 2px;
+                border-color: #065F46;
+                border-style: solid;
+
+                cursor: pointer;
+                transition: 0.2s;
+            }
+        
+        /*Bouton voter*/
+            .VotedGameDescription{
+                width: 97% !important;
+                height: 50px;
+            }
+
+            .VotePopUp{
+                font-family: "Exo 2";
+                font-size: 15px;
+                color: #D1FAE5;
+                
+                background: #057c5a;
+                border: 2px solid #D1FAE5;
+                border-radius: 20px;
+                
+                margin: auto;
+                display: block;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .VotePopUp:hover{
+                border: 2px solid #b2fcd6;
+                box-shadow: 0 0 5px #b2fcd6;
+            }
+
+            /*Bouton fermer*/
+            .close {
+                display: flex;
+                justify-content: end;
+                align-items: left;
+                margin: auto;
+                width: 5%;
+                border-radius: 20px;
+
+                border: 1px;
+                border-style: solid;
+                border-color: transparent;
+            }
+
+            .close:hover{
+                box-shadow: 0 0 5px #b2fcd6;
 }
 /*Footer*/
     /*Fond du footer*/
