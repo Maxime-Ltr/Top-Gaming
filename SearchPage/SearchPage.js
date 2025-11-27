@@ -3,9 +3,6 @@ const searchInput = document.getElementById("game-search");
 const gameList = document.getElementById("game-list");
 const loading = document.getElementById("loading");
 
-// Jeux par défaut les 4 Jeux
-const defaultGames = [730, 	570, 578080, 1808500];
-
 // Récupérer les infos d'un jeu
 async function fetchGame(appId) {
     try {
@@ -121,3 +118,14 @@ loadDefaultGames();
         // Lance la recherche
         searchGames(query);
 }
+
+let defaultGames = []
+
+// Jeux par défaut les 4 Jeux
+    if(!searchInput.value){
+        defaultGames = [730, 570, 578080, 1808500];
+        loadDefaultGames();
+    }
+    else{
+        defaultGames = []
+    }
