@@ -29,7 +29,7 @@ async function loadDefaultGames() {
         
         // Création d’une carte pour chaque jeu 
         const cardLink = document.createElement("a"); // lien cliquable
-        cardLink.href = `jeu.html?appId=${appId}`;
+        cardLink.href = `../GamePage/jeu.html?appId=${appId}`;
         cardLink.className = "jeu-link"; // pour le style
         cardLink.target = "_self"; // ouvre dans le même onglet
 
@@ -72,7 +72,7 @@ async function searchGames(query) {
              
             // Création de la carte de jeu pour la recherche
             const cardLink = document.createElement("a");
-            cardLink.href = `jeu.html?appId=${item.id}`;
+            cardLink.href = `../GamePage/jeu.html?appId=${item.id}`;
             cardLink.className = "jeu-link";
             cardLink.target = "_self";
 

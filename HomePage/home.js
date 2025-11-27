@@ -166,6 +166,6 @@
     input.addEventListener("keydown", (e) => { // Ajout d'une fonction lorsque une touche est presser dans la search bar
         if (e.key === "Enter") { // Vérification de la touche presser = enter
             const value = encodeURIComponent(input.value); // Définition de la valeur saisie pour récupération SearchPage
-            window.location.href = `SearchPage.html?query=${value}`; // Ouverture page et défition de la value
+            window.location.href = `../SearchPage/SearchPage.html?query=${value}`; // Ouverture page et défition de la value
         }
     });
