@@ -8,6 +8,7 @@ body {
     padding-bottom: 20px;/*Saut de ligne (espacement)*/
 }
 .top h1 {
+    padding-top: 7%;
   font-family: Changa One; /* police */
   font-weight: bold; /* style de police */
   font-size: clamp(2rem, 5vw, 4rem); /* taille de police */
@@ -103,6 +104,7 @@ video.bb_img {
             border-style:solid;
             padding-top: 5px;
             padding-bottom: 5px;
+            margin-top: 5%;
 
             animation-duration: 300ms;
             transition: all 300ms;
@@ -131,13 +133,14 @@ video.bb_img {
 
         /*Parametrage icon loupe*/
         .vote-icon {
-            position: absolute !important; /*Permet superposition (Affecte les autre élèment)*/
-            right: 15px !important;
-            top: 50% !important;
-            transform: translateY(-50%) !important;
-            width: 24px !important;
-            height: 24px !important;
-            pointer-events: none !important;
+            position: absolute; /*Permet superposition (Affecte les autre élèment)*/
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+            margin-top: 2.5%;
         }
 
     /*Vote PopUp*/
