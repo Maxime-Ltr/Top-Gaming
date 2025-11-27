@@ -15,9 +15,10 @@
         /*Mise en forme titre*/
             .NomSite {
                 font-family: "Changa One"; /*Police d'écriture*/
-                font-size: 90px; 
+                font-size: 70px; 
                 font-weight: 300; /*Taille des traits de la lettre*/
-                color: #FFFFFF;
+                color: #0aab0e;
+                opacity: 75%;
                 padding: 15px;
                 display: block; /*Définie comment agit les éléments*/
                 margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
@@ -28,7 +29,7 @@
         /*Mise en forme Sous-Titre*/
             .SousTitrePresentation {
                 font-family: "Quicksand"; /*Police d'écriture*/
-                font-size: 25px;
+                font-size: 20px;
                 font-weight: Regular; /*Taille des traits de la lettre*/
                 color: #D1FAE5;
                 padding: 5px;
@@ -36,18 +37,20 @@
                 margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
                 text-align: center; /*Centre le texte*/
                 width: 80%; /*Permet de définir la taille max sur écrant*/
+                opacity: 80%;
         }
 
         /*Mise en forme description*/
             .DescriptionPresentation {
                 font-family: "Exo 2";
-                font-size: 18px;
+                font-size: 14px;
                 font-weight: 400;
                 color: #D1FAE5;
                 display: block; /*Définie comment agit les éléments*/
                 margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
                 text-align: center; /*Centre le texte*/
                 width: 80%; /*Permet de définir la taille max sur écrant*/
+                opacity: 75%;
     }
         
     /*Barre de recherche*/
@@ -84,6 +87,7 @@
             font-size: 18px;
             font-weight: Regular;
             color: #D1FAE5;
+            opacity: 50%;
         }
 
         /*Parametrage icon loupe*/
@@ -123,12 +127,13 @@
                 font-family: "Quicksand"; /*Police d'écriture*/
                 font-size: 25px; 
                 font-weight: regular; /*Taille des traits de la lettre*/
-                color: #FFFFFF;
+                color: #D1FAE5;
                 padding: 15px;
                 display: block; /*Définie comment agit les éléments*/
                 margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
                 text-align: left; /*Centre le texte*/
-                width: 80%; /*Permet de définir la taille max sur écrant*/
+                width: 73%; /*Permet de définir la taille max sur écrant*/
+                opacity: 75%;
         }
 
         /*Information du jeu*/
@@ -158,7 +163,8 @@
 
                 border: 1px;
                 border-style: solid;
-                border-color: transparent;
+                border-color: #D1FAE5;
+                box-shadow: 0 0 15px #D1FAE5;
 
                 animation-duration: 300ms; /*Durée de l'animation*/
                 transition: all 300ms; /*Durée transition*/
@@ -167,36 +173,24 @@
             .GameImage:hover{
                 border: 1px;
                 border-color: #D1FAE5;
+                /* border-color: black; */
                 border-style: solid; 
-                box-shadow: 0 0 10px #D1FAE5; /*Ombre de la boite (x1 = décal droite, x2 = décal bas, x3 = adoucisement ombre*/
+                box-shadow: 0 0 15px #0aab0e; /*Ombre de la boite (x1 = décal droite, x2 = décal bas, x3 = adoucisement ombre*/
             }    
 
         /*Nom du jeu*/
             .NomJeu{
                 font-family: "Quicksand"; /*Police d'écriture*/
-                font-size: 30px;
+                font-size: 15px;
                 font-weight: Regular; /*Taille des traits de la lettre*/
                 color: #D1FAE5;
                 padding: 5px;
                 display: block; /*Définie comment agit les éléments*/
                 margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
                 text-align: left; /*Centre le texte*/
-                width: 80%; /*Permet de définir la taille max sur écrant*/
+                width: 70%; /*Permet de définir la taille max sur écrant*/
         }
-        
-        /*Description du jeu*/
-            .DescriptionJeu{
-                font-family: "Exo 2" !important;
-                font-size: 18px;
-                font-weight: Regular;
-                color: #D1FAE5;
-                padding: 10px;
-                padding-bottom: 60px;
-                display: block; /*Définie comment agit les éléments*/
-                margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
-                text-align: left; /*Centre le texte*/
-                width: 80%; /*Permet de définir la taille max sur écrant*/
-    }
+
 
     /*Vote*/
         /*Paramétrage division barre de recherche*/
@@ -216,6 +210,7 @@
             width: 100%;
             text-align: center;
             color: #D1FAE5;
+            opacity: 80%;
     
             background-color: #065F46;
             border-radius: 99999px;

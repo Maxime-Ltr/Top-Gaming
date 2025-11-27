@@ -147,7 +147,7 @@
                     currentIndex = (currentIndex + 1) % games.length; // Permet de changer de jeu (Ajouter 1 a chaque fois) et réinitialisé la variable lorsque l'on a atteint la fin
                     displayGame(currentIndex); // Affiche le jeu
                     fadeIn(); // Utilisation de la fonction fade-in
-                }, 10000); // Atteintre 10000 ms
+                }, 2000); // Atteintre 1000 ms
 
             } catch (error) {
                 console.error("Erreur :", error); // En cas d'erreur écrire "Erreur" dans la console
