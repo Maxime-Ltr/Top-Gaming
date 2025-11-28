@@ -5,6 +5,31 @@ const params = new URLSearchParams(window.location.search);
         const descEl = document.getElementById("game-description");
         const imgEl = document.getElementById("game-image");
 
+        const style = document.createElement("style");
+
+        style.innerHTML = `
+            #game-description img,
+            #game-description video,
+            #game-description iframe {
+                display: block !important;
+                margin: 20px auto !important;
+                width: 80% !important;
+                max-width: 80% !important;
+                height: auto !important;
+                float: none !important;
+                border-radius: 20px;
+            }
+
+            #game-image {
+                display: block;
+                margin: 20px auto;
+                width: 80%;
+                height: auto;
+                border-radius: 20px;
+            }
+        `;
+        document.head.appendChild(style);
+
         if (!appId) {
             titleEl.innerText = "Erreur : aucun jeu sélectionné.";
             descEl.innerHTML = "<p>Veuillez retourner à la page principale et sélectionner un jeu.</p>";
