@@ -5,6 +5,21 @@
 }
 
 /*HEAD*/
+    .logo {
+        position: absolute;      /* reste en haut peu importe le contenu */
+        top: 0;
+        left: 0;
+
+        display: flex;
+        gap: 10px;               /* espace entre les 2 boutons */
+        padding: 10px;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 40px; 
+    }
+    
     /*Permet dégrader head*/
         .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
