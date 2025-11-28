@@ -59,26 +59,28 @@ video.bb_img {
     font-weight: Semibold
 }
 .Buttons {
-    margin: 2%;
+    position: absolute;      /* reste en haut peu importe le contenu */
+    top: 0;
+    left: 0;
+
+    display: flex;
+    gap: 10px;               /* espace entre les 2 boutons */
+    padding: 10px;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    width: auto;             /* IMPORTANT : laisse la taille naturelle */
 }
 
 .home {
-    position: absolute;
-    width: 7%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    width: 40px;             /* mets les tailles que tu veux */
 }
 
 .return {
-    position: absolute;
-    width: 5.5%;
-    padding-left: 7%;
-    padding-top: 0.7%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    width: 30px;
 }
+
 
 /*Vote*/
         /*Paramétrage division barre de recherche*/
