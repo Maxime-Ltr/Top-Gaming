@@ -14,12 +14,18 @@
 
     /*Affichage du logo*/
     .logo {
-        position: absolute;
-        width: 7%;
+        position: absolute;      /* reste en haut peu importe le contenu */
+        top: 0;
+        left: 0;
+
         display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 2%;
+        gap: 10px;               /* espace entre les 2 boutons */
+        padding: 10px;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 40px; 
     }
 
     /*Texte*/

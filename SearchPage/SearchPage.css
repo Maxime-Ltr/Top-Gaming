@@ -5,12 +5,18 @@ body {
 }
 
 .returnhome {
-    width: 7% !important;   /* L'image prend toute la largeur du conteneur */
-    max-width: 950px;          /* Limite maximale pour grands écrans */
-    display: flex;            /* Supprime les espaces indésirables */
-    position: absolute;
-    align-items: flex-start;
-    margin: 2%;
+    position: absolute;      /* reste en haut peu importe le contenu */
+    top: 0;
+    left: 0;
+
+    display: flex;
+    gap: 10px;               /* espace entre les 2 boutons */
+    padding: 10px;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 40px; 
 
 
 }
