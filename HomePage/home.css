@@ -2,6 +2,7 @@
     /*Retrait bordure blanche*/
     body{
         margin: 0px;
+        padding: 0px;
     }
 
     /*Permet dégrader head*/
@@ -207,7 +208,7 @@
             .vote-box {
             position: relative; /*Permet superposition (Affecte pas autre élèment)*/
             margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-            width: 30%; 
+            width: 40%; 
         }
 
         /*Initiation texte saisie*/

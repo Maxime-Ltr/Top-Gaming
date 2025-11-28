@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
   background: #065F46;
   overflow-x: hidden; /* Empêche tout débordement horizontal */
 }
@@ -84,7 +85,7 @@ video.bb_img {
             .vote-box {
             position: relative; /*Permet superposition (Affecte pas autre élèment)*/
             margin: auto; /*Taille automatique de l'élément (permet le centrage)*/
-            width: 30%; 
+            width: 40%; 
         }
 
         /*Initiation texte saisie*/
@@ -406,9 +407,6 @@ video.bb_img {
         font-size: 1.1rem;
     }
 
-    .imageLien {
-        width: 90%;
-    }
 }
 
 /* --- Phone --- */
@@ -428,21 +426,5 @@ video.bb_img {
 
     .description {
         font-size: 1rem;
-    }
-
-    .lien {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .imageLien {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        width: 100%;
-    }
-
-    .LogoGit, .LogoFigma, .LogoAgora {
-        width: 45px;
     }
 }

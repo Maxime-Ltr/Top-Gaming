@@ -1,6 +1,7 @@
 body {
-    margin: 0;
+    margin: 0px;
     background: #065F46;
+    padding: 0px;
 }
 
 .returnhome {
@@ -237,10 +238,6 @@ body {
     .jeu p {
         font-size: 20px;
     }
-
-    .imageLien {
-        width: 90%;
-    }
 }
 
 /* Code responsive pour PHONE */
@@ -274,22 +271,6 @@ body {
 
     .jeu p {
         font-size: 16px;
-    }
-
-    .lien {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .imageLien {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        width: 100%;
-    }
-
-    .LogoGit, .LogoFigma, .LogoAgora {
-        width: 45px;
     }
 }
 #loading {
