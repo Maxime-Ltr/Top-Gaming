@@ -133,10 +133,29 @@
 
                     // Récupération et modification des donnée du jeu dans le tableau GAME
                     games.push({
+                        appid: game.appid,
                         name: appData.name,
                         header_image: appData.header_image,
                     });
                 }
+                
+                // Affiche le jeu correspondant à l'index
+                function displayGame(index) {
+                    const game = games[index];
+
+                    GameImage.src = game.header_image;
+                    TitreJeu.textContent = game.name;
+
+                // Rendre l'image cliquable
+                    GameImage.onclick = () => {
+                    window.location.href = `../GamePage/jeu.html?id=${game.appid}`;
+                };
+
+               // Rendre le titre cliquable
+                    TitreJeu.onclick = () => {
+                    window.location.href = `../GamePage/jeu.html?id=${game.appid}`;
+               };
+            }
 
                 // Permet d'afficher le jeu dans le tableau game ayant l'index 0
                 displayGame(0);
