@@ -14,7 +14,7 @@ body {
   font-weight: 100; /* style de police */
   font-size: clamp(2rem, 5vw, 4rem); /* taille de police */
   text-align: center;
-  color: white; /* la coleur */
+  color: #86EFAC; /* la coleur */
   margin-top: 20px;       /* petit espace au-dessus si tu veux */
   margin-bottom: 20px;    /* espace propre sous le titre */
 }

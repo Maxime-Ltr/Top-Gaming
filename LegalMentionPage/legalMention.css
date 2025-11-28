@@ -19,7 +19,7 @@
 
         width: 40px; 
     }
-    
+
     /*Permet dégrader head*/
         .top {
         background: linear-gradient(#065F46 ,#065F46, #112A0F); /*Dégrader du head*/
@@ -33,7 +33,7 @@
                 font-family: "Changa One"; /*Police d'écriture*/
                 font-size: 90px; 
                 font-weight: 300; /*Taille des traits de la lettre*/
-                color: #FFFFFF;
+                color: #86EFAC;
                 padding: 15px;
                 display: block; /*Définie comment agit les éléments*/
                 margin: auto; /*Définie le millieu de tout les éléments réunis (permet centrer)*/
