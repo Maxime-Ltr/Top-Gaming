@@ -18,6 +18,12 @@ async function fetchGame(appId) {
 // Charger les jeux par défaut
 async function loadDefaultGames() {
     loading.style.display = "block";
+    loading.style.fontFamily = "Arial";
+    loading.style.fontWeight = "100";
+    loading.style.fontSize = "15px";
+    loading.style.textAlign = "center";
+    loading.style.color = "#86EFAC";
+
     gameList.innerHTML = "";
 
     for (const appId of defaultGames) {
@@ -57,7 +63,14 @@ async function searchGames(query) {
         const data = await res.json();
 
         if (!data.items || data.items.length === 0) {
-            gameList.innerHTML = "<p style='text-align:center; color:#86EFAC;'>Aucun jeu trouvé.</p>";
+            gameList.style.gridTemplateColumns = "repeat(1, 1fr)";
+            gameList.innerHTML = 
+            `
+    <p style="font-family: arial; font-weight: 100; font-size: 15px; text-align: center; color: #86EFAC;">
+        Aucun jeu trouvé.
+    </p>
+`;
+
             return;
         }
 
@@ -83,6 +96,7 @@ async function searchGames(query) {
 
             cardLink.appendChild(card);
             gameList.appendChild(cardLink);
+            gameList.style.gridTemplateColumns = "repeat(2, 1fr)";
 
             addedGames.add(item.id);  // <-- Marque ce jeu comme ajouté
         }
